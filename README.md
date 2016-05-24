@@ -27,3 +27,4 @@ jiuhao-yangshuo, 410900345@qq.com
 ## License
 
 SSCategoriesSDK is available under the MIT license. See the LICENSE file for more info.
+# SSCategories
