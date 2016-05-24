@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "SSCategoriesSDK Tools.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/410900345/SSCategoriesSDK",
+  "homepage": "https://github.com/410900345/SSCategoriesSDK.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -18,5 +18,13 @@
   "platforms": {
     "ios": "6.0"
   },
-  "source_files": "SSCategoriesSDK/Classes/**/*"
+  "source_files": "SSCategoriesSDK/Classes/**/*.{h,m}",
+  "public_header_files": "SSCategoriesSDK/Classes/**/*.h",
+  "frameworks": [
+    "UIKit",
+    "QuartzCore",
+    "CoreGraphics",
+    "CoreImage",
+    "Foundation"
+  ]
 }
