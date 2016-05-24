@@ -1,0 +1,22 @@
+{
+  "name": "SSCategoriesSDK",
+  "version": "0.1.0",
+  "summary": "A short description of SSCategoriesSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SSCategoriesSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jiuhao-yangshuo": "410900345@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SSCategoriesSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SSCategoriesSDK/Classes/**/*"
+}
