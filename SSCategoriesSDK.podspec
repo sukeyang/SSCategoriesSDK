@@ -30,12 +30,12 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '6.0'
 
-  s.source_files = 'SSCategoriesSDK/Classes/**/*.{h,m}'
+  s.source_files = 'Classes/**/*.{h,m}'
   
   # s.resource_bundles = {
   #   'SSCategoriesSDK' => ['SSCategoriesSDK/Assets/*.png']
   # }
 
-  s.public_header_files = 'SSCategoriesSDK/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'QuartzCore','CoreGraphics', 'CoreImage'
+  s.public_header_files = 'Classes/**/*.h'
+  s.frameworks = 'UIKit', 'QuartzCore','CoreGraphics', 'CoreImage','Foundation'
 end
