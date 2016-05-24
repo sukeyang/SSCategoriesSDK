@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'SSCategoriesSDK_Example' do
+  pod 'SSCategoriesSDK', :path => '../'
+
+  target 'SSCategoriesSDK_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+  end
+end
