@@ -7,6 +7,7 @@
 //
 
 #import "SSViewController.h"
+#import "SSCategories.h"
 
 @interface SSViewController ()
 
