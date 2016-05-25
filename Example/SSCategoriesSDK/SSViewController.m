@@ -9,16 +9,22 @@
 #import "SSViewController.h"
 #import "SSCategories.h"
 
+
 @interface SSViewController ()
 
 @end
+
 
 @implementation SSViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
+
+    if (true) {
+        NSLog(@"111xxxxxx");
+    }
 }
 
 - (void)didReceiveMemoryWarning
