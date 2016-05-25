@@ -36,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C13D4064728DCBA228AAA16 /* SSCategoriesSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SSCategoriesSDK.podspec; path = ../SSCategoriesSDK.podspec; sourceTree = "<group>"; };
 		3077B0661E16AFB11E73DC4C /* Pods_SSCategoriesSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSCategoriesSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5797A829B6B6FDF1503ADEA1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SSCategoriesSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSCategoriesSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +185,6 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				2C13D4064728DCBA228AAA16 /* SSCategoriesSDK.podspec */,
 				5797A829B6B6FDF1503ADEA1 /* README.md */,
 				DD4EF6D8E47489E705CEEF11 /* LICENSE */,
 			);

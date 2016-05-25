@@ -1,6 +1,6 @@
 {
   "name": "SSCategoriesSDK",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "summary": "SSCategoriesSDK Tools.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/410900345/SSCategoriesSDK.git",
@@ -13,18 +13,29 @@
   },
   "source": {
     "git": "https://github.com/410900345/SSCategoriesSDK.git",
-    "tag": "0.1.0"
+    "tag": "0.3.0"
   },
   "platforms": {
     "ios": "6.0"
   },
-  "source_files": "SSCategoriesSDK/Classes/**/*.{h,m}",
-  "public_header_files": "SSCategoriesSDK/Classes/**/*.h",
+  "requires_arc": true,
   "frameworks": [
     "UIKit",
     "QuartzCore",
     "CoreGraphics",
     "CoreImage",
     "Foundation"
+  ],
+  "subspecs": [
+    {
+      "name": "SSFoundation",
+      "source_files": "SSCategoriesSDK/Classes/SSFoundation/*.{h,m}",
+      "public_header_files": "SSCategoriesSDK/Classes/SSFoundation/*.h"
+    },
+    {
+      "name": "SSUIKit",
+      "source_files": "SSCategoriesSDK/Classes/SSUIKit/*.{h,m}",
+      "public_header_files": "SSCategoriesSDK/Classes/SSUIKit/*.h"
+    }
   ]
 }
