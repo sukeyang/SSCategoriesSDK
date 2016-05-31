@@ -25,4 +25,17 @@
     }
 }
 
+- (void)setSafeObject:(id)object forKey:(id)key {
+    
+    if (object != nil && ![object isEqual:[NSNull null]] && key != nil && ![key isEqual:[NSNull null]]) {
+        
+        [self setObject:object forKey:key];
+    }
+}
+
+- (void)setIfNilObject:(id)object forKey:(id)key {
+    
+    [self setObject:[NSNull null] forKey:key];
+    [self setSafeObject:object forKey:key];
+}
 @end

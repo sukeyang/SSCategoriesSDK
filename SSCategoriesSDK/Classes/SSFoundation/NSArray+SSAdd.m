@@ -58,4 +58,21 @@
     return yourMutableArray;
 }
 
+- (void)addSafeObject:(id)object {
+    
+    if (object != nil && ![object isEqual:[NSNull null]]) {
+        
+        [self addObject:object];
+    }
+}
+
+- (void)addIfNilObject:(id)object {
+    
+    if (object != nil && ![object isEqual:[NSNull null]]) {
+        
+        [self addObject:object];
+        return;
+    }
+    [object addObject:[NSNull null]];
+}
 @end

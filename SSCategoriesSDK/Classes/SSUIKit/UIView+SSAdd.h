@@ -33,4 +33,21 @@
 - (void)removeAllSubviews;
 - (UIView *)findFirstResponder;
 
+
+/**
+ *  添加锚点
+ *
+ *  @param anchorPoint 锚点
+ */
+- (void)addAnchorPoint:(CGPoint)anchorPoint;
+
+/**
+ *  添加边框
+ *
+ *  @param color 边框颜色
+ *  @param width 边框宽度
+ */
+- (void)addBorderWithColor:(UIColor *)color width:(CGFloat)width;
+
+
 @end

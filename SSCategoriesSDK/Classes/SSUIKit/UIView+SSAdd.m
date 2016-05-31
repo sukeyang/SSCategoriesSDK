@@ -157,4 +157,16 @@
     return NO;
 }
 
+- (void)addAnchorPoint:(CGPoint)anchorPoint {
+    
+    self.layer.anchorPoint = anchorPoint;
+    self.center = CGPointMake(self.center.x - (0.5 - self.layer.anchorPoint.x) * self.bounds.size.width, self.center.y - (0.5 - self.layer.anchorPoint.y) * self.bounds.size.height);
+}
+
+- (void)addBorderWithColor:(UIColor *)color width:(CGFloat)width {
+    
+    self.layer.borderWidth = width;
+    self.layer.borderColor = color.CGColor;
+}
+
 @end
