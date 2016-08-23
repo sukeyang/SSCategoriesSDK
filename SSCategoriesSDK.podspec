@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SSCategoriesSDK'
-  s.version          = '0.3.0'
+  s.version          = '0.3.1'
   s.summary          = 'SSCategoriesSDK Tools.'
 
 # This description is used to generate tags and improve search results.
@@ -28,12 +28,16 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/410900345/SSCategoriesSDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '7.0'
   s.requires_arc = true
 
    s.subspec 'SSUIKit' do |sp|
       sp.source_files = 'SSCategoriesSDK/Classes/SSUIKit/*.{h,m}'
       sp.public_header_files = 'SSCategoriesSDK/Classes/SSUIKit/*.h'
+  end
+     s.subspec 'SSTools' do |sp|
+      sp.source_files = 'SSCategoriesSDK/Classes/SSTools/*.{h,m}'
+      sp.public_header_files = 'SSCategoriesSDK/Classes/SSTools/*.h'
   end
 
    s.subspec 'SSFoundation' do |sp|
