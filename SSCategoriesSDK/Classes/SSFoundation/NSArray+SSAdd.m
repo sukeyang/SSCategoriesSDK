@@ -10,33 +10,46 @@
 
 @implementation NSArray (SSAdd)
 
-- (id)safeObjectAtIndex:(NSUInteger)index
-{
-    if (self.count > index)
-    {
+- (id)safeObjectAtIndex:(NSUInteger)index {
+    if (self.count > index) {
         return [self objectAtIndex:index];
     }
     return nil;
 }
 
-- (id)deepCopy
-{
+- (id)deepCopy {
     return [[NSArray alloc] initWithArray:self copyItems:YES];
 }
 
-- (id)mutableDeepCopy
-{
+- (id)mutableDeepCopy {
     return [[NSMutableArray alloc] initWithArray:self copyItems:YES];
 }
 
-- (id)trueDeepCopy
-{
+- (id)trueDeepCopy {
     return [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:self]];
 }
 
-- (id)trueDeepMutableCopy
-{
+- (id)trueDeepMutableCopy {
     return [[NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:self]] mutableCopy];
+}
+
++ (NSArray *)fetchRandomCount:(NSInteger)randomCount fromAllNum:(NSInteger)allNum {
+    NSInteger cellNum = randomCount;
+    NSInteger wordCount = allNum;
+    NSMutableSet *idstrings = [[NSMutableSet alloc] init];
+    while (idstrings.count < cellNum) {
+        NSInteger randomInt = arc4random() % wordCount;
+        [idstrings addObject:@(randomInt)];
+    }
+    NSArray *returnArray = [idstrings allObjects];
+    return returnArray;
+}
+
+
++ (NSArray *)obtainArrayWithoutDuplicates:(NSArray *)origelArray {
+    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:origelArray];
+    NSArray *arrayWithoutDuplicates = [orderedSet array];
+    return arrayWithoutDuplicates;
 }
 
 @end

@@ -18,6 +18,19 @@
 - (id)trueDeepCopy;
 - (id)trueDeepMutableCopy;
 
+/**
+ *  随机数
+ *
+ *  @param randomCount 要几个
+ *  @param allNum      0-allNum
+ *
+ *  @return 数组
+ */
++ (NSArray *)fetchRandomCount:(NSInteger)randomCount fromAllNum:(NSInteger)allNum;
+
+//过滤重复
++ (NSArray *)obtainArrayWithoutDuplicates:(NSArray *)origelArray;
+
 @end
 
 

@@ -10,13 +10,13 @@
 
 @interface NSObject (SSAdd)
 
--(NSString *)KXjSONString;
+- (NSString *)KXjSONString;
 
 @end
 
 @interface NSString (KXJsonObject)
 
 //转为字典
--(id)KXjSONValueObject;
+- (id)KXjSONValueObject;
 
 @end

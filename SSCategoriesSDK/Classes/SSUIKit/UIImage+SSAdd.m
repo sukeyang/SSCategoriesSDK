@@ -132,4 +132,66 @@
     UIGraphicsEndImageContext();
     return theImage;
 }
+
+
+/**
+ *  压缩到指定大小图片
+ *
+ *  @param imageSize 100k
+ *
+ *  @return Data
+ */
+- (NSData *)compressImageToSpecifyM:(NSUInteger )imageSize {
+    // Determine output size
+    CGFloat maxSize = 1024.0f;
+    CGFloat width = self.size.width;
+    CGFloat height = self.size.height;
+    CGFloat newWidth = width;
+    CGFloat newHeight = height;
+    
+    // If any side exceeds the maximun size, reduce the greater side to 1200px and proportionately the other one
+    if (width > maxSize || height > maxSize) {
+        if (width > height) {
+            newWidth = maxSize;
+            newHeight = (height*maxSize)/width;
+        } else {
+            newHeight = maxSize;
+            newWidth = (width*maxSize)/height;
+        }
+    }
+    // Resize the image
+    CGSize newSize = CGSizeMake(newWidth, newHeight);
+    UIGraphicsBeginImageContext(newSize);
+    [self drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage *newImagePic = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    CGFloat compression = 0.9f;
+    CGFloat maxCompression = 0.1f;
+    if (imageSize == 0) {
+        imageSize = 100;
+    }
+    NSUInteger maxFileSize = imageSize*1024;
+    NSData *newImageData = UIImageJPEGRepresentation(newImagePic, compression);
+    while ([newImageData length] > maxFileSize && compression > maxCompression) {
+        compression -= 0.1;
+        newImageData = UIImageJPEGRepresentation(newImagePic, compression);
+    }
+    return newImageData;
+}
+
+- (NSData *)dataByCompressToSize:(CGSize)size toQuality:(CGFloat)quality {
+    UIImage *compressedImage = self;
+    if (!CGSizeEqualToSize(size, CGSizeZero)) {
+        UIGraphicsBeginImageContext(size);
+        [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        compressedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    if (quality == 1) {
+        return UIImagePNGRepresentation(compressedImage);
+    } else {
+        return UIImageJPEGRepresentation(compressedImage, quality);
+    }
+}
 @end

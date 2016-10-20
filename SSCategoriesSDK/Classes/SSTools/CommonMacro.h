@@ -34,6 +34,18 @@
 //数组是否为空
 #define IsArrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
 
+#define AppSystemVersion       [[[UIDevice currentDevice] systemVersion]intValue]
+#define AppColor(color)                     ([UIColor colorWithHexString:color])
+#define AppNotificationCenter    ([NSNotificationCenter defaultCenter])
+#define AppLoadImage(imageName)  ([UIImage imageNamed:imageName])
+#define AppSystemFontWithSize(size)        ([UIFont systemFontOfSize:size])
+#define AppBlodFontWithSize(size)          ([UIFont boldSystemFontOfSize:size])
+#define AppFileManager [NSFileManager defaultManager]
+#define AppImageOfFile(Name) ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:Name ofType:nil]])
+#define AppBoldFontWithSize(size) [UIFont boldSystemFontOfSize:size]
+#define AppUserDefaults [NSUserDefaults standardUserDefaults]
+#define StringIsNULL(string)  [CommonTools isNULLString3:string]
+
 //block 声明
 #ifdef NS_BLOCKS_AVAILABLE
 typedef void (^AppBasicBlock)(id content);

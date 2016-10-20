@@ -19,4 +19,5 @@
 
 + (BOOL)isValidateTelphone:(NSString*)value;
 
++ (NSString*)isNULLString3:(NSString*)aString;
 @end

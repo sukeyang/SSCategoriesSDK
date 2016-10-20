@@ -132,4 +132,12 @@
     return  [predicate evaluateWithObject:value];
 }
 
++ (NSString*)isNULLString3:(NSString*)aString {
+    if ( [aString isKindOfClass:[NSNull class]] || !aString  || [aString isEqualToString:@"(null)"]) {
+        return @"";
+    } else {
+        return aString;
+    }
+}
+
 @end

@@ -27,4 +27,9 @@
 ///  @return 正三角形
 + (UIImage*)createImageWithFillColor:(UIColor*)fillColor andWithStrokeColor:(UIColor*)strokeColor withWeigt:(float)weight andWithHeight:(float)height andWithStrokeWeight:(float)strokeWeight;
 
+//压缩大小
+- (NSData *)compressImageToSpecifyM:(NSUInteger )imageSize;
+//压缩分辨率
+- (NSData *)dataByCompressToSize:(CGSize)size toQuality:(CGFloat)quality;
+
 @end
