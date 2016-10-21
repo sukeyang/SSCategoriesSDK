@@ -195,7 +195,6 @@ NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextVal
     return attrituteString;
 }
 
-
 @end
 
 @implementation NSMutableAttributedString (SSAdd)
