@@ -51,6 +51,8 @@ typedef NS_ENUM(NSInteger, CalculateType) {
 //两位小数
 - (NSString *)formatTwoDigits;
 
+- (NSMutableAttributedString *)createAttributedStringWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor;
+
 @end
 
 
@@ -62,7 +64,5 @@ typedef NS_ENUM(NSInteger, CalculateType) {
 +(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithCsutomFont:(UIFont*)font andWithFrontColor:(NSString *)frontColor;
 
 + (NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andOneKeyWord:(NSString *)oneStr oneTextColor:(NSString *)oneTextColor andTwoNSString:(NSString *)twoStr andTwoColor:(NSString *)tColor andWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor;
-
-- (NSMutableAttributedString *)createAttributedStringWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor;
 
 @end

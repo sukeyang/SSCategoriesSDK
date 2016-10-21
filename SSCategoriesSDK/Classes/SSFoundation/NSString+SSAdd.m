@@ -184,6 +184,10 @@ NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextVal
     return [NSString stringWithFormat:@"%ld",(long)resultValue.integerValue];
 }
 
+- (NSString *)formatTwoDigits {
+    NSString *priceStr = [NSString stringWithFormat:@"%.2f",[self doubleValue]];
+    return priceStr;
+}
 
 - (NSMutableAttributedString *)createAttributedStringWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor  {
     NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:self] ;
@@ -191,11 +195,6 @@ NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextVal
     return attrituteString;
 }
 
-
-- (NSString *)formatTwoDigits {
-    NSString *priceStr = [NSString stringWithFormat:@"%.2f",[self doubleValue]];
-    return priceStr;
-}
 
 @end
 
@@ -232,10 +231,5 @@ NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextVal
     return attrituteString;
 }
 
-- (NSMutableAttributedString *)createAttributedStringWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor  {
-    NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:self] ;
-    [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithHexString:origelStrColor], NSFontAttributeName : [UIFont systemFontOfSize:fontSize]} range:NSMakeRange(0, self.length)];
-    return attrituteString;
-}
 
 @end
