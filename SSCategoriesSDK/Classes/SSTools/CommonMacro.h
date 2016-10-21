@@ -10,7 +10,6 @@
 #define CommonMacro_h
 
 #import "CommonBaseTools.h"
-#import "SystemInfo.h"
 
 //版本号对外2.1.6
 #define AppBundleVersion				[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]

@@ -161,10 +161,8 @@
 //获得当前时间
 + (long long)fetchLongZeroTime {
     NSDate* now = [NSDate date];
-    //    NSLog(@"%@",now);
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    //    formateDate
     NSString *dateString = [formatter stringFromDate:now];
     NSDate *zeroDate = [formatter dateFromString:dateString];
     long long test = (long long)[zeroDate timeIntervalSince1970];
@@ -177,7 +175,6 @@
     long long test = (long long)([now timeIntervalSince1970]*1000);
     return test;
 }
-
 
 //服务器返回时间戳进行转换
 + (NSString*)fetchServerTime:(long long)timeLine type:(int)type {

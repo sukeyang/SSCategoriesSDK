@@ -58,11 +58,9 @@
 @implementation NSMutableArray (SSAdd)
 
 //随机排序一个数组
-+(NSMutableArray *)randomSortArrayWithArray:(NSMutableArray *)yourMutableArray
-{
++ (NSMutableArray *)randomSortArrayWithArray:(NSMutableArray *)yourMutableArray {
     NSUInteger count = [yourMutableArray count];
-    for (NSUInteger i = 0; i < count; ++i)
-    {
+    for (NSUInteger i = 0; i < count; ++i) {
         // Select a random element between i and end of array to swap with.
         NSInteger nElements = count - i;
         NSInteger n = (arc4random() % nElements) + i;
@@ -72,17 +70,13 @@
 }
 
 - (void)addSafeObject:(id)object {
-    
     if (object != nil && ![object isEqual:[NSNull null]]) {
-        
         [self addObject:object];
     }
 }
 
 - (void)addIfNilObject:(id)object {
-    
     if (object != nil && ![object isEqual:[NSNull null]]) {
-        
         [self addObject:object];
         return;
     }
