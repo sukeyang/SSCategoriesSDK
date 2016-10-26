@@ -52,6 +52,8 @@ typedef NS_ENUM(NSInteger, CalculateType) {
 - (NSString *)formatTwoDigits;
 
 - (NSMutableAttributedString *)createAttributedStringWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor;
+NSString *decimalNumberCalculateWithString(NSString *preValue,NSString *nextValue,CalculateType type);
+NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextValue,CalculateType type);
 
 @end
 
