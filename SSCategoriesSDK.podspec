@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SSCategoriesSDK'
-  s.version          = '0.3.3'
+  s.version          = '0.3.5'
   s.summary          = 'SSCategoriesSDK Tools.'
 
 # This description is used to generate tags and improve search results.
