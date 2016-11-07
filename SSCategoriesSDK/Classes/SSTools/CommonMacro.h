@@ -43,7 +43,7 @@
 #define AppImageOfFile(Name) ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:Name ofType:nil]])
 #define AppBoldFontWithSize(size) [UIFont boldSystemFontOfSize:size]
 #define AppUserDefaults [NSUserDefaults standardUserDefaults]
-#define StringIsNULL(string)  [CommonTools isNULLString3:string]
+#define StringIsNULL(string)  [CommonBaseTools isNULLString3:string]
 
 //block 声明
 #ifdef NS_BLOCKS_AVAILABLE

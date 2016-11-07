@@ -50,6 +50,8 @@ typedef NS_ENUM(NSInteger, CalculateType) {
 + (NSString *)appBuildVersion;
 //两位小数
 - (NSString *)formatTwoDigits;
+//字符串对比
+- (BOOL)isEqualToAnonther:(NSString *)anotherString;
 
 - (NSMutableAttributedString *)createAttributedStringWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor;
 NSString *decimalNumberCalculateWithString(NSString *preValue,NSString *nextValue,CalculateType type);
@@ -61,7 +63,7 @@ NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextVal
 @interface NSMutableAttributedString (SSAdd)
 
 //替换字体颜色
-+(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithFontSize:(float )size andWithFrontColor:(NSString *)frontColor;
++(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithFontSize:(float)size andWithFrontColor:(NSString *)frontColor;
 //替换字体颜色和样式
 +(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithCsutomFont:(UIFont*)font andWithFrontColor:(NSString *)frontColor;
 

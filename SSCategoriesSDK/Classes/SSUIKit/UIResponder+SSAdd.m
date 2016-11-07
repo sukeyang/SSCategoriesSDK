@@ -12,13 +12,11 @@
 
 @implementation UIResponder (SSAdd)
 
-- (void)routerEventWithName:(NSString *)eventName userInfo:(id )userInfo
-{
+- (void)routerEventWithName:(NSString *)eventName userInfo:(id )userInfo {
     [[self nextResponder] routerEventWithName:eventName userInfo:userInfo];
 }
 
-- (void)routerEventWithEventType:(SXEventType )eventName userInfo:(id)userInfo;
-{
+- (void)routerEventWithEventType:(SXEventType )eventName userInfo:(id)userInfo; {
     [[self nextResponder] routerEventWithEventType:eventName userInfo:userInfo];
 }
 @end

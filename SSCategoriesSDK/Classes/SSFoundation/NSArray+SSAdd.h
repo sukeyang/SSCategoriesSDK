@@ -52,4 +52,6 @@
  */
 - (void)addIfNilObject:(id)object;
 
+//返回被删除的数据
+- (id)removeFirstObject;
 @end

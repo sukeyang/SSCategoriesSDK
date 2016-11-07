@@ -82,4 +82,14 @@
     }
     [object addObject:[NSNull null]];
 }
+
+- (id)removeFirstObject {
+    id objcet = nil;
+    if (self.count) {
+        objcet = self.firstObject;
+        [self removeObject:objcet];
+    }
+    return objcet;
+}
+
 @end

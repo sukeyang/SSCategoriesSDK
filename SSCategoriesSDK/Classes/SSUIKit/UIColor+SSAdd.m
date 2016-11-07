@@ -11,8 +11,7 @@
 @implementation UIColor (SSAdd)
 
 //#009900
-+ (UIColor*)colorWithHexString:(NSString*)stringToConvert
-{
++ (UIColor*)colorWithHexString:(NSString*)stringToConvert {
     NSString* cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     // String should be 6 or 8 characters

@@ -13,8 +13,8 @@
 - (UIImage *) imageWithTintColor:(UIColor *)tintColor;
 - (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
 
--(UIImage*)getSubImage:(CGRect)rect;
--(UIImage*)scaleToSize:(CGSize)size;
+- (UIImage*)getSubImage:(CGRect)rect;
+- (UIImage*)scaleToSize:(CGSize)size;
 
 ///  实心三角(颜色2选一)
 ///

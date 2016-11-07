@@ -9,6 +9,7 @@
 #import "NSString+SSAdd.h"
 #import "UIColor+SSAdd.h"
 #include <CommonCrypto/CommonDigest.h>
+#import "CommonMacro.h"
 
 @implementation NSString (SSAdd)
 
@@ -148,6 +149,13 @@
 
 + (NSString *)appBuildVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+}
+
+- (BOOL)isEqualToAnonther:(NSString *)anotherString {
+    if (IsStrEmpty(self) || IsStrEmpty(anotherString)) {
+        return NO;
+    }
+    return [self isEqualToString:anotherString.lowercaseString];
 }
 
 NSString *decimalNumberCalculateWithString(NSString *preValue,NSString *nextValue,CalculateType type) {
