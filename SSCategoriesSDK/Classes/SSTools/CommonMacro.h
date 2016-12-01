@@ -22,7 +22,7 @@
 #define AppDelegate                    ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 //打开debug 模式
-#ifdef AppDebug
+#ifdef DEBUG
 #define NSLog(s,...) NSLog(@"%s LINE:%d < %@ >",__FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
 #else
 #define NSLog(...) {}
