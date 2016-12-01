@@ -12,6 +12,8 @@
 
 //相机可用
 + (BOOL)isAvailableCamera;
+//相册
++ (BOOL)isAvailablePhoto;
 //麦克风
 + (BOOL)canRecord;
 

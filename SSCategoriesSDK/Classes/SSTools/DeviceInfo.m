@@ -17,16 +17,11 @@
 
 + (NSString *)deviceModel {
     struct utsname systemInfo;
-    
     uname(&systemInfo);
-    
     NSString* code = [NSString stringWithCString:systemInfo.machine
                                         encoding:NSUTF8StringEncoding];
-    
     static NSDictionary* deviceNamesByCode = nil;
-    
     if (!deviceNamesByCode) {
-        
         deviceNamesByCode = @{@"i386"      :@"Simulator",
                               @"x86_64"    :@"Simulator",
                               @"iPod1,1"   :@"iPod Touch",        // (Original)
@@ -76,17 +71,13 @@
     NSString* deviceName = [deviceNamesByCode objectForKey:code];
     if (!deviceName) {
         // Not found on database. At least guess main device type from string contents:
-        
         if ([code rangeOfString:@"iPod"].location != NSNotFound) {
             deviceName = @"iPod Touch";
-        }
-        else if([code rangeOfString:@"iPad"].location != NSNotFound) {
+        } else if([code rangeOfString:@"iPad"].location != NSNotFound) {
             deviceName = @"iPad";
-        }
-        else if([code rangeOfString:@"iPhone"].location != NSNotFound){
+        } else if([code rangeOfString:@"iPhone"].location != NSNotFound){
             deviceName = @"iPhone";
-        }
-        else {
+        } else {
             deviceName = @"Unknown";
         }
     }

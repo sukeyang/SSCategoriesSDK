@@ -8,6 +8,7 @@
 
 #import "CommonBaseTools.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @implementation CommonBaseTools
 
@@ -16,6 +17,15 @@
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
     if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
         NSLog(@"相机权限受限");
+        return NO;
+    }
+    return YES;
+}
+
++ (BOOL)isAvailablePhoto {
+    ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+    if(authStatus == ALAuthorizationStatusRestricted || authStatus ==ALAuthorizationStatusDenied){
+        NSLog(@"相册权限受限");
         return NO;
     }
     return YES;
@@ -55,7 +65,6 @@
     
     NSString* valueStart2 = [value substringToIndex:2];
     BOOL areaFlag = NO;
-    
     for (NSString* areaCode in areasArray) {
         if ([areaCode isEqualToString:valueStart2]) {
             areaFlag = YES;
