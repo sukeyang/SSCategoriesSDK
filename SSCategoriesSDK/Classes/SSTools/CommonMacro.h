@@ -19,7 +19,7 @@
 //对内6
 #define AppDisplayName                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 #define AppKeyWindow                    [[UIApplication sharedApplication] keyWindow]
-#define AppDelegate                    ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+#define APP_DELEGATE                    ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 //打开debug 模式
 #ifdef DEBUG
@@ -42,13 +42,12 @@
 
 
 #pragma mark ----------------快捷方法相关---------------------------
-
 #define AppStrWithStr(x,y)                    [NSString stringWithFormat:@"%@%@",x,y]
 #define AppSystemVersion                       [[[UIDevice currentDevice] systemVersion] intValue]
 #define AppNotificationCenter                   ([NSNotificationCenter defaultCenter])
 #define AppFileManager                         [NSFileManager defaultManager]
 #define AppUserDefaults                       [NSUserDefaults standardUserDefaults]
-#define StringIsNULL(string)                  [CommonBaseTools isNULLString3:string]
+#define AppStringIsNULL(string)                  [CommonBaseTools isNULLString3:string]
 
 
 #pragma mark ----------------UI相关---------------------------
