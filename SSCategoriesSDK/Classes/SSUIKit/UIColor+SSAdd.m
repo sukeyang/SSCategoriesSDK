@@ -51,8 +51,7 @@
                            alpha:1.0f];
 }
 
-+ (UIColor*)colorWithHexString:(NSString*)stringToConvert alpha:(CGFloat)alpha
-{
++ (UIColor*)colorWithHexString:(NSString*)stringToConvert alpha:(CGFloat)alpha {
     NSString* cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     // String should be 6 or 8 characters

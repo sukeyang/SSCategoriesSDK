@@ -139,13 +139,22 @@
 
 @implementation NSDate (PGAdd)
 
-- (NSString*)formatCreatetTime:(NSDate*)time {
++(NSString*)formatCreatetTime:(NSDate*)time {
     if ((NSNull*)time == [NSNull null]) {
         return @"";
     }
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    //    formateDate
+    NSString *dateString = [formatter stringFromDate:time];
+    return dateString;
+}
+
++ (NSString*)formatCreatetTimeHaveHHMMSS:(NSDate*)time {
+    if ((NSNull*)time == [NSNull null]) {
+        return @"";
+    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *dateString = [formatter stringFromDate:time];
     return dateString;
 }

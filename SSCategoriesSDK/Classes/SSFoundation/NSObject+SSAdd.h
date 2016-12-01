@@ -12,6 +12,9 @@
 
 - (NSString *)KXjSONString;
 
+//数据的Propertys
+- (NSMutableArray *)SSObjcPropertyArray;
+
 @end
 
 @interface NSString (KXJsonObject)

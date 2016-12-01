@@ -21,6 +21,23 @@
     return YES;
 }
 
++ (BOOL)canRecord {
+    __block BOOL bCanRecord = YES;
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending) {
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
+            [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+                if (granted) {
+                    bCanRecord = YES;
+                } else {
+                    bCanRecord = NO;
+                }
+            }];
+        }
+    }
+    return bCanRecord;
+}
+
 + (BOOL)isValidateIDCardNumber:(NSString*)value {
     value = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     int length = 0;

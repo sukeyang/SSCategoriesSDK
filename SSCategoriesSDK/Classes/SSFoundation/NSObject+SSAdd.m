@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+SSAdd.h"
+#import <objc/runtime.h>
 
 @implementation NSObject (SSAdd)
 
@@ -28,6 +29,30 @@
     return @"";
 }
 
+- (NSMutableArray *)SSObjcPropertyArray {
+    if (!self) return nil;
+    NSMutableArray *arraySub = [[NSMutableArray alloc] init];
+    //    YYClassInfo *info = [YYClassInfo classInfoWithClass: [FeedBackModel class]];
+    //    arraySub = info.propertyInfos.allKeys;
+    unsigned int propertyCount = 0;
+    objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
+    if (properties) {
+        for (int i = 0; i< propertyCount; i++) {
+            objc_property_t property = properties[i];
+            const char *propName = property_getName(property);
+            NSString *pName;
+            if(propName) {
+                const char *name = property_getName(property);
+                if (name) {
+                    pName = [NSString stringWithUTF8String:name];
+                }
+                [arraySub addObject:pName];
+            }
+        }
+        free(properties);
+    }
+    return arraySub;
+}
 @end
 
 

@@ -12,6 +12,8 @@
 
 //相机可用
 + (BOOL)isAvailableCamera;
+//麦克风
++ (BOOL)canRecord;
 
 + (BOOL)isValidateIDCardNumber:(NSString*)value;
 

@@ -26,8 +26,8 @@
 @property (nonatomic) CGFloat centerX;
 @property (nonatomic) CGFloat centerY;
 
--(BOOL) containsSubView:(UIView *)subView;
--(BOOL) containsSubViewOfClassType:(id)cs;
+- (BOOL)containsSubView:(UIView *)subView;
+- (BOOL)containsSubViewOfClassType:(id)cs;
 
 - (UIViewController*)viewController;
 - (void)removeAllSubviews;
@@ -49,5 +49,7 @@
  */
 - (void)addBorderWithColor:(UIColor *)color width:(CGFloat)width;
 
+//截屏
++ (UIImage*)screenshotWithView:(UIView*)view;
 
 @end

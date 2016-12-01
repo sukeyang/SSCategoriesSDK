@@ -31,5 +31,10 @@
 - (NSData *)compressImageToSpecifyM:(NSUInteger )imageSize;
 //压缩分辨率
 - (NSData *)dataByCompressToSize:(CGSize)size toQuality:(CGFloat)quality;
+//把UIColor对象转化成UIImage对象
++ (UIImage*)createImageWithColor:(UIColor*)color;
+
++ (UIImage *)fetchAppiconImage;
++ (NSString *)fetchAppiconImageString;
 
 @end

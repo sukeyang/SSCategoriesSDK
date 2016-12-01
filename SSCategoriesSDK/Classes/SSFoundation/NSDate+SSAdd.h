@@ -38,7 +38,8 @@
 + (NSString*)fetchServerTime:(long long)timeLine type:(int)type;
 + (NSString*)fetchServerTimeForStr:(NSString*)dateString type:(int)type;
 //字符串格式
-- (NSString*)formatCreatetTime:(NSDate*)time;
++ (NSString*)formatCreatetTime:(NSDate*)time;
++ (NSString*)formatCreatetTimeHaveHHMMSS:(NSDate*)time;
 
 @end
 

@@ -86,8 +86,7 @@
     return self.center.x;
 }
 
-- (void)setCenterX:(CGFloat)centerX
-{
+- (void)setCenterX:(CGFloat)centerX {
     self.center = CGPointMake(centerX, self.center.y);
 }
 
@@ -95,14 +94,12 @@
     return self.center.y;
 }
 
-- (void)setCenterY:(CGFloat)centerY
-{
+- (void)setCenterY:(CGFloat)centerY {
     self.center = CGPointMake(self.center.x, centerY);
 }
 
 #pragma mark ------------事件效应者-----------
--(UIViewController*)viewController
-{
+- (UIViewController*)viewController {
     //找到控制器这个响应者
     UIResponder* nextRes = [self nextResponder];
     do{
@@ -122,24 +119,20 @@
     }
 }
 
-- (UIView *)findFirstResponder
-{
+- (UIView *)findFirstResponder {
     if ([self isFirstResponder]) {
         return self;
     }
-    
     for (UIView *subview in [self subviews]) {
         UIView *firstResponder = [subview findFirstResponder];
         if (nil != firstResponder) {
             return firstResponder;
         }
     }
-    
     return nil;
 }
 
--(BOOL) containsSubView:(UIView *)subView
-{
+- (BOOL)containsSubView:(UIView *)subView {
     for (UIView *view in [self subviews]) {
         if ([view isEqual:subView]) {
             return YES;
@@ -158,15 +151,26 @@
 }
 
 - (void)addAnchorPoint:(CGPoint)anchorPoint {
-    
     self.layer.anchorPoint = anchorPoint;
     self.center = CGPointMake(self.center.x - (0.5 - self.layer.anchorPoint.x) * self.bounds.size.width, self.center.y - (0.5 - self.layer.anchorPoint.y) * self.bounds.size.height);
 }
 
 - (void)addBorderWithColor:(UIColor *)color width:(CGFloat)width {
-    
     self.layer.borderWidth = width;
     self.layer.borderColor = color.CGColor;
+}
+
+//view生成图片
++ (UIImage*)screenshotWithView:(UIView*)view {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, [UIScreen mainScreen].scale);
+//    if (IOS_7) {
+        [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+//    } else {
+//        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+//    }
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 @end

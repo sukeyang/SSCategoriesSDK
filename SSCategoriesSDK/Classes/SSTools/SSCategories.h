@@ -23,6 +23,7 @@
 
 #pragma mark ----------------------------- SSTools
 #import "CommonBaseTools.h"
+#import "DeviceInfo.h"
 
 #pragma mark ----------------------------- SSUIKit
 #import "UIButton+SSAdd.h"
@@ -32,5 +33,9 @@
 #import "UIColor+SSAdd.h"
 #import "UIAlertView+SSBlocks.h"
 #import "UIGestureRecognizer+SSAdd.h"
+#import "SSUIAdapter.h"
+#import "UILabel+SSAdd.h"
+#import "UITableView+SSAdd.h"
+#import "UIButton+SSImageTitleStyle.h"
 
 #endif /* SSCategories_h */

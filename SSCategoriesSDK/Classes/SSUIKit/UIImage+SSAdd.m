@@ -194,4 +194,28 @@
         return UIImageJPEGRepresentation(compressedImage, quality);
     }
 }
+
+//把UIColor对象转化成UIImage对象
++ (UIImage*)createImageWithColor:(UIColor*)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage* theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return theImage;
+}
+
++ (UIImage *)fetchAppiconImage {
+    UIImage *image = [UIImage imageNamed: [UIImage fetchAppiconImageString]];
+    return image;
+}
+
++(NSString *)fetchAppiconImageString {
+    NSString *imageString = [[[[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIcons"] objectForKey:@"CFBundlePrimaryIcon"] objectForKey:@"CFBundleIconFiles"] lastObject];
+    return imageString;
+}
+
 @end
