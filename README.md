@@ -1,15 +1,24 @@
 # SSCategoriesSDK
 
+![License MIT](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
+![Pod version](https://img.shields.io/cocoapods/v/YTKNetwork.svg?style=flat)
 [![CI Status](http://img.shields.io/travis/jiuhao-yangshuo/SSCategoriesSDK.svg?style=flat)](https://travis-ci.org/jiuhao-yangshuo/SSCategoriesSDK)
 [![Version](https://img.shields.io/cocoapods/v/SSCategoriesSDK.svg?style=flat)](http://cocoapods.org/pods/SSCategoriesSDK)
 [![License](https://img.shields.io/cocoapods/l/SSCategoriesSDK.svg?style=flat)](http://cocoapods.org/pods/SSCategoriesSDK)
 [![Platform](https://img.shields.io/cocoapods/p/SSCategoriesSDK.svg?style=flat)](http://cocoapods.org/pods/SSCategoriesSDK)
+
+## What
+This a general utility class, class contains the commonly used and some classification, convenient to use in the project.
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+|  Minimum iOS Target | Note |
+|:-------------------:|:-----|
+| iOS 7 | Xcode 7+ is required. |
+| iOS 6 | n/a |
 
 ## Installation
 
@@ -21,9 +30,11 @@ pod "SSCategoriesSDK"
 ```
 
 ## Author
-410900345@qq.com
+* [Oxygen][OxygenGithub]
 
 ## License
 
 SSCategoriesSDK is available under the MIT license. See the LICENSE file for more info.
-# SSCategories
+
+<!-- external links -->
+[OxygenGithub]:https://github.com/410900345
