@@ -1,15 +1,15 @@
 //
-//  DeviceInfo.m
+//  SSDeviceInfo.m
 //  Pods
 //
 //  Created by yangshuo on 16/12/1.
 //
 //
 
-#import "DeviceInfo.h"
+#import "SSDeviceInfo.h"
 #import <sys/utsname.h>
 
-@implementation DeviceInfo
+@implementation SSDeviceInfo
 
 + (NSString *)deviceOSVersion {
     return [[UIDevice currentDevice] systemVersion];

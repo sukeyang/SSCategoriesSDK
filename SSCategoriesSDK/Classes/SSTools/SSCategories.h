@@ -23,7 +23,7 @@
 
 #pragma mark ----------------------------- SSTools
 #import "CommonBaseTools.h"
-#import "DeviceInfo.h"
+#import "SSDeviceInfo.h"
 
 #pragma mark ----------------------------- SSUIKit
 #import "UIButton+SSAdd.h"

@@ -1,5 +1,5 @@
 //
-//  DeviceInfo.h
+//  SSDeviceInfo.h
 //  Pods
 //
 //  Created by yangshuo on 16/12/1.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DeviceInfo : NSObject
+@interface SSDeviceInfo : NSObject
 
 //设备型号
 + (NSString *)deviceModel;

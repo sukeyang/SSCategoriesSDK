@@ -46,6 +46,25 @@ static char leftNameKey;
     return CGRectContainsPoint(rect, point) ? self : nil;
 }
 
+@end
 
+
+@implementation UIButton (SSUIButtonInfo)
+
+- (NSString *)buttonDefultString {
+    return objc_getAssociatedObject(self, cachesIDKey);
+}
+
+- (void)setButtonDefultString:(NSString *)buttonDefultString {
+    objc_setAssociatedObject(self, cachesIDKey, buttonDefultString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setDicInfo:(id)dicInfo {
+    objc_setAssociatedObject(self, cachesIDKey2, dicInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)dicInfo {
+    return objc_getAssociatedObject(self, cachesIDKey2);
+}
 
 @end
