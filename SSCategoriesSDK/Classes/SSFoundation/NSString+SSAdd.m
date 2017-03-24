@@ -70,7 +70,7 @@
 
 - (CGFloat)widthForFont:(UIFont *)font height:(CGFloat)height {
     CGSize size = [self sizeForFont:font size:CGSizeMake(HUGE, height) mode:NSLineBreakByWordWrapping];
-    return size.height;
+    return size.width;
 }
 
 - (CGSize)sizeForFont:(UIFont *)font size:(CGSize)size mode:(NSLineBreakMode)lineBreakMode {
