@@ -67,7 +67,7 @@
 #ifdef NS_BLOCKS_AVAILABLE
 typedef void (^AppBasicBlock)(id content);
 typedef void (^AppOperationCallBackBlock)(BOOL isSuccess, NSString *errorMsg);
-typedef void (^AppContentCallBackBlock)(int flag, id content);
+typedef void (^AppContentCallBackBlock)(NSInteger flag, id content);
 #endif
 
 /**
