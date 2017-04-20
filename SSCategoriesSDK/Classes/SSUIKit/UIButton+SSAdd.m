@@ -23,7 +23,7 @@ static char leftNameKey;
     objc_setAssociatedObject(self, &leftNameKey, [NSNumber numberWithFloat:left], OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (CGRect) enlargedRect {
+- (CGRect)SSEnlargedRect {
     NSNumber* topEdge = objc_getAssociatedObject(self, &topNameKey);
     NSNumber* rightEdge = objc_getAssociatedObject(self, &rightNameKey);
     NSNumber* bottomEdge = objc_getAssociatedObject(self, &bottomNameKey);
@@ -39,7 +39,7 @@ static char leftNameKey;
 }
 
 - (UIView*) hitTest:(CGPoint) point withEvent:(UIEvent*) event {
-    CGRect rect = [self enlargedRect];
+    CGRect rect = [self SSEnlargedRect];
     if (CGRectEqualToRect(rect, self.bounds)) {
         return [super hitTest:point withEvent:event];
     }

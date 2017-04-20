@@ -11,7 +11,7 @@
 @interface UIButton (SSAdd)
 
 - (void)setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left;
-
+- (CGRect)SSEnlargedRect;
 @end
 
 static const void * cachesIDKey = &cachesIDKey;
