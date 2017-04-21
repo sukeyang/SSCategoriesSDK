@@ -22,6 +22,9 @@ typedef NS_ENUM(NSInteger, ButtonImageTitleStyle ) {
     ButtonImageTitleStyleCenterDown = 8,    //图片居中，文字在图片下面。
     ButtonImageTitleStyleRightLeft = 9,     //图片在右，文字在左，距离按钮两边边距
     ButtonImageTitleStyleLeftRight = 10,    //图片在左，文字在右，距离按钮两边边距
+    
+    ButtonImageTitleStyleRightUp     = 11,     //图片在右上，文字在左，整体居中。
+
 };
 @interface UIButton (SSImageTitleStyle)
 /*
@@ -30,4 +33,5 @@ typedef NS_ENUM(NSInteger, ButtonImageTitleStyle ) {
  
  */
 -(void)setButtonImageTitleStyle:(ButtonImageTitleStyle)style padding:(CGFloat)padding;
+
 @end

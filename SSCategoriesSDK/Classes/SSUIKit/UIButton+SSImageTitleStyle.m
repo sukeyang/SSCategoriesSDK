@@ -169,6 +169,19 @@
                 
             }
                 break;
+            case ButtonImageTitleStyleRightUp:
+            {
+                //图片在右，文字在左
+                self.titleEdgeInsets = UIEdgeInsetsMake(0,
+                                                        -(imageRect.size.width + padding/2),
+                                                        0,
+                                                        (imageRect.size.width + padding/2));
+                
+                self.imageEdgeInsets = UIEdgeInsetsMake(-10,
+                                                        (titleRect.size.width+ padding/2),
+                                                        0,
+                                                        -(titleRect.size.width+ padding/2));
+            }
             default:
                 break;
         }
