@@ -159,6 +159,13 @@
 }
 
 NSString *decimalNumberCalculateWithString(NSString *preValue,NSString *nextValue,CalculateType type) {
+    if (IsStrEmpty(preValue)) {
+        preValue = @"";
+    }
+    
+    if (IsStrEmpty(nextValue)) {
+        nextValue = @"";
+    }
     SEL selector;
     switch (type) {
         case CalculateTypePlus: {
