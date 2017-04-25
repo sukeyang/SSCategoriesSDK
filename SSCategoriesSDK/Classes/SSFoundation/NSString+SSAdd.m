@@ -160,11 +160,11 @@
 
 NSString *decimalNumberCalculateWithString(NSString *preValue,NSString *nextValue,CalculateType type) {
     if (IsStrEmpty(preValue)) {
-        preValue = @"";
+        preValue = @"0";
     }
     
     if (IsStrEmpty(nextValue)) {
-        nextValue = @"";
+        nextValue = @"0";
     }
     SEL selector;
     switch (type) {
