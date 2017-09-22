@@ -7,8 +7,6 @@
 //
 
 #import "SSUIAdapter.h"
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 @implementation SSUIAdapter
  
@@ -48,7 +46,7 @@
     return UniversalSize;
 }
 
-+ (CGFloat)SSUniversalSizeByFontf320:(CGFloat)for320 f375:(CGFloat)for375 f414:(CGFloat)for414  f768:(CGFloat)for768 {
++ (CGFloat)SSUniversalSizeByFontf320:(CGFloat)for320 f375:(CGFloat)for375 f414:(CGFloat)for414 f768:(CGFloat)for768 {
     CGFloat UniversalSize = for320;
     CGFloat deviceSizeWidth = [UIScreen mainScreen].bounds.size.width;
     if (deviceSizeWidth == 320) {

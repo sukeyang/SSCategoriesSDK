@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define SSGetUniversalSizeByWidth(for320, for375, for414,for768)   [SSUIAdapter SSUniversalSizeByWidthf320:for320 f375:for375 f414:for414 f768:for768]
 #define SSGetUniversalSizeByFont(for320, for375, for414,for768)   [SSUIAdapter SSUniversalSizeByFontf320:for320 f375:for375 f414:for414 f768:for768]
@@ -21,12 +23,12 @@
 //宽度
 + (CGFloat)SSUniversalSizeByWidthf320:(CGFloat)for320 f375:(CGFloat)for375 f414:(CGFloat)for414 f768:(CGFloat)for768;
 //高度
-+(CGFloat)SSUniversalSizeByHeightf4:(CGFloat)for4 f5:(CGFloat)for5 f6:(CGFloat)for6 f6p:(CGFloat)for6p fX:(CGFloat)forX fPad:(CGFloat)forPad  ;
++ (CGFloat)SSUniversalSizeByHeightf4:(CGFloat)for4 f5:(CGFloat)for5 f6:(CGFloat)for6 f6p:(CGFloat)for6p fX:(CGFloat)forX fPad:(CGFloat)forPad  ;
 //字体
-+(CGFloat)SSUniversalSizeByFontf320:(CGFloat)for320 f375:(CGFloat)for375 f414:(CGFloat)for414 f768:(CGFloat)for768;
++ (CGFloat)SSUniversalSizeByFontf320:(CGFloat)for320 f375:(CGFloat)for375 f414:(CGFloat)for414 f768:(CGFloat)for768;
 //比例
-+(CGFloat)SSUniversalWidth:(CGFloat)with;
-
-+(CGFloat)SSUniversalFont:(CGFloat)fontSize;
++ (CGFloat)SSUniversalWidth:(CGFloat)with;
+//
++ (CGFloat)SSUniversalFont:(CGFloat)fontSize;
 
 @end

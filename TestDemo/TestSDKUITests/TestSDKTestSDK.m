@@ -7,6 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
+//@class SSUIAdapter;
+#import "SSUIAdapter.h"
+
+//@class  SSCategories
 
 @interface TestSDK_TestSDK : XCTestCase
 
@@ -22,6 +26,16 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testBasicCache {
+//    SSUIAdapter SSUniversalSizeByWidthf320:<#(CGFloat)#> f375:<#(CGFloat)#> f414:<#(CGFloat)#> f768:<#(CGFloat)#>
+    CGFloat wigth = SSGetUniversalSizeByWidth(320,375,414,768);
+    
+    CGFloat font = SSGetUniversalSizeByFont(320,375,414,768);
+     CGFloat UniversalWidth = SSGetDynamicUniversalWidth(320);
+     CGFloat UniversalFont = SSGetDynamicUniversalFont(320);
+     CGFloat Height = SSGetUniversalSizeByHeight(320,375,414,414,812,768);
 }
 
 - (void)testExample {

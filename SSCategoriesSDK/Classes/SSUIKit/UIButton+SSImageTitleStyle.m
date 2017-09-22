@@ -12,7 +12,6 @@
 
 - (void)setButtonImageTitleStyle:(ButtonImageTitleStyle)style padding:(CGFloat)padding {
     if (self.imageView.image != nil && self.titleLabel.text != nil) {
-        
         //先还原
         self.titleEdgeInsets = UIEdgeInsetsZero;
         self.imageEdgeInsets = UIEdgeInsetsZero;
