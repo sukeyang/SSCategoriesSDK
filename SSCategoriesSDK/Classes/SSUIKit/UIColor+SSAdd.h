@@ -10,7 +10,7 @@
 
 @interface UIColor (SSAdd)
 
-+ (UIColor*)colorWithHexString:(NSString*)stringToConvert;
-+ (UIColor*)colorWithHexString:(NSString*)stringToConvert alpha:(CGFloat)alpha;
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert;
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert alpha:(CGFloat)alpha;
 
 @end

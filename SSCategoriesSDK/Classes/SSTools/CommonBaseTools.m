@@ -9,6 +9,7 @@
 #import "CommonBaseTools.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <UIKit/UIKit.h>
 
 @implementation CommonBaseTools
 
@@ -145,19 +146,19 @@
     }
 }
 
-+ (BOOL)isValidateFixPhone:(NSString*)value{
++ (BOOL)isValidateFixPhone:(NSString *)value{
     NSString *isFixphone = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", isFixphone];
     return [predicate evaluateWithObject:value];
 }
 
-+ (BOOL)isValidateTelphone:(NSString*)value{
++ (BOOL)isValidateTelphone:(NSString *)value{
     NSString *isTelphone = @"(^(13\\d|15[^4,\\D]|17[13678]|18\\d)\\d{8}|170[^346,\\D]\\d{7})$";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", isTelphone];
     return  [predicate evaluateWithObject:value];
 }
 
-+ (NSString*)isNULLString3:(NSString*)aString {
++ (NSString *)isNULLString3:(NSString *)aString {
     if ( [aString isKindOfClass:[NSNull class]] || !aString  || [aString isEqualToString:@"(null)"]) {
         return @"";
     } else {

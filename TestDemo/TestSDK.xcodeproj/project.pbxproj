@@ -18,6 +18,26 @@
 		75EC9E191F74B36600B290BA /* SSUIAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DFD1F74B0CB00B290BA /* SSUIAdapter.m */; };
 		75EC9E1A1F74B36E00B290BA /* UIView+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E131F74B0CB00B290BA /* UIView+SSAdd.m */; };
 		75EC9E1B1F74B6D200B290BA /* SSUIAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DFD1F74B0CB00B290BA /* SSUIAdapter.m */; };
+		75EC9E1C1F74C09C00B290BA /* SSDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DFA1F74B0CB00B290BA /* SSDeviceInfo.m */; };
+		75EC9E1D1F74C09C00B290BA /* SSDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DFA1F74B0CB00B290BA /* SSDeviceInfo.m */; };
+		75EC9E1E1F74D34300B290BA /* UITableView+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E111F74B0CB00B290BA /* UITableView+SSAdd.m */; };
+		75EC9E201F74D34700B290BA /* UIResponder+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E0F1F74B0CB00B290BA /* UIResponder+SSAdd.m */; };
+		75EC9E211F74D34C00B290BA /* UILabel+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E0D1F74B0CB00B290BA /* UILabel+SSAdd.m */; };
+		75EC9E221F74D35000B290BA /* UIImage+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E0B1F74B0CB00B290BA /* UIImage+SSAdd.m */; };
+		75EC9E231F74D36B00B290BA /* CommonBaseTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DF61F74B0CB00B290BA /* CommonBaseTools.m */; };
+		75EC9E241F74D37800B290BA /* UIAlertView+SSBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DFF1F74B0CB00B290BA /* UIAlertView+SSBlocks.m */; };
+		75EC9E251F74D37800B290BA /* UIButton+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E011F74B0CB00B290BA /* UIButton+SSAdd.m */; };
+		75EC9E261F74D37800B290BA /* UIButton+SSImageTitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E031F74B0CB00B290BA /* UIButton+SSImageTitleStyle.m */; };
+		75EC9E271F74D37800B290BA /* UIColor+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E051F74B0CB00B290BA /* UIColor+SSAdd.m */; };
+		75EC9E281F74D37800B290BA /* UIControl+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E071F74B0CB00B290BA /* UIControl+SSAdd.m */; };
+		75EC9E291F74D37800B290BA /* UIGestureRecognizer+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9E091F74B0CB00B290BA /* UIGestureRecognizer+SSAdd.m */; };
+		75EC9E2A1F74D38000B290BA /* NSArray+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DE71F74B0CB00B290BA /* NSArray+SSAdd.m */; };
+		75EC9E2B1F74D38000B290BA /* NSDate+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DE91F74B0CB00B290BA /* NSDate+SSAdd.m */; };
+		75EC9E2C1F74D38000B290BA /* NSDictionary+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DEB1F74B0CB00B290BA /* NSDictionary+SSAdd.m */; };
+		75EC9E2D1F74D38000B290BA /* NSNull+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DED1F74B0CB00B290BA /* NSNull+SSAdd.m */; };
+		75EC9E2E1F74D38000B290BA /* NSObject+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DEF1F74B0CB00B290BA /* NSObject+SSAdd.m */; };
+		75EC9E2F1F74D38000B290BA /* NSObject+SSAddForKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DF11F74B0CB00B290BA /* NSObject+SSAddForKVO.m */; };
+		75EC9E301F74D38000B290BA /* NSString+SSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC9DF31F74B0CB00B290BA /* NSString+SSAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -352,11 +372,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75EC9E201F74D34700B290BA /* UIResponder+SSAdd.m in Sources */,
+				75EC9E241F74D37800B290BA /* UIAlertView+SSBlocks.m in Sources */,
+				75EC9E2D1F74D38000B290BA /* NSNull+SSAdd.m in Sources */,
 				75EC9DC11F74B08500B290BA /* ViewController.m in Sources */,
+				75EC9E1E1F74D34300B290BA /* UITableView+SSAdd.m in Sources */,
+				75EC9E301F74D38000B290BA /* NSString+SSAdd.m in Sources */,
+				75EC9E261F74D37800B290BA /* UIButton+SSImageTitleStyle.m in Sources */,
+				75EC9E281F74D37800B290BA /* UIControl+SSAdd.m in Sources */,
+				75EC9E221F74D35000B290BA /* UIImage+SSAdd.m in Sources */,
+				75EC9E291F74D37800B290BA /* UIGestureRecognizer+SSAdd.m in Sources */,
+				75EC9E2C1F74D38000B290BA /* NSDictionary+SSAdd.m in Sources */,
+				75EC9E2B1F74D38000B290BA /* NSDate+SSAdd.m in Sources */,
 				75EC9E191F74B36600B290BA /* SSUIAdapter.m in Sources */,
+				75EC9E231F74D36B00B290BA /* CommonBaseTools.m in Sources */,
+				75EC9E251F74D37800B290BA /* UIButton+SSAdd.m in Sources */,
+				75EC9E2F1F74D38000B290BA /* NSObject+SSAddForKVO.m in Sources */,
 				75EC9DCC1F74B08500B290BA /* main.m in Sources */,
+				75EC9E1D1F74C09C00B290BA /* SSDeviceInfo.m in Sources */,
 				75EC9E1A1F74B36E00B290BA /* UIView+SSAdd.m in Sources */,
+				75EC9E211F74D34C00B290BA /* UILabel+SSAdd.m in Sources */,
 				75EC9DBE1F74B08500B290BA /* AppDelegate.m in Sources */,
+				75EC9E2A1F74D38000B290BA /* NSArray+SSAdd.m in Sources */,
+				75EC9E271F74D37800B290BA /* UIColor+SSAdd.m in Sources */,
+				75EC9E2E1F74D38000B290BA /* NSObject+SSAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +406,7 @@
 				75EC9E1B1F74B6D200B290BA /* SSUIAdapter.m in Sources */,
 				75EC9E151F74B0FF00B290BA /* TestSDKTestSDK.m in Sources */,
 				75EC9DD61F74B08500B290BA /* TestSDKUITests.m in Sources */,
+				75EC9E1C1F74C09C00B290BA /* SSDeviceInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

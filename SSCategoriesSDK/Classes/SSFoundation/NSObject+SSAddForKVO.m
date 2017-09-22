@@ -53,8 +53,6 @@ static const int block_key;
 
 @end
 
-
-
 @implementation NSObject (YYAddForKVO)
 
 - (void)addObserverBlockForKeyPath:(NSString *)keyPath block:(void (^)(__weak id obj, id oldVal, id newVal))block {

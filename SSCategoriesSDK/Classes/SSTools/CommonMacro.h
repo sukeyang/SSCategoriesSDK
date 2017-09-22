@@ -43,24 +43,24 @@
 
 #pragma mark ----------------快捷方法相关---------------------------
 #define AppStrWithStr(x,y)                    [NSString stringWithFormat:@"%@%@",x,y]
-#define AppSystemVersion                       [[[UIDevice currentDevice] systemVersion] intValue]
-#define AppNotificationCenter                   ([NSNotificationCenter defaultCenter])
-#define AppFileManager                         [NSFileManager defaultManager]
+#define AppSystemVersion                      [[[UIDevice currentDevice] systemVersion] intValue]
+#define AppNotificationCenter                 ([NSNotificationCenter defaultCenter])
+#define AppFileManager                        [NSFileManager defaultManager]
 #define AppUserDefaults                       [NSUserDefaults standardUserDefaults]
-#define AppStringIsNULL(string)                  [CommonBaseTools isNULLString3:string]
+#define AppStringIsNULL(string)               [CommonBaseTools isNULLString3:string]
 
 
 #pragma mark ----------------UI相关---------------------------
 #define AlertViewShow(msg) [[[UIAlertView alloc]initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
 #define AppImageOfFile(Name)                  ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:Name ofType:nil]])
 #define AppBoldFontWithSize(size)             [UIFont boldSystemFontOfSize:size]
-#define AppScreenWidth                         [[UIScreen mainScreen] bounds].size.width
-#define AppScreenHeight                        [[UIScreen mainScreen] bounds].size.height
-#define AppDisplayScreenHeight                  ([[UIScreen mainScreen] bounds].size.height -64)
-#define AppColor(color)                        ([UIColor colorWithHexString:color])
-#define AppLoadImage(imageName)                 ([UIImage imageNamed:imageName])
-#define AppSystemFontWithSize(size)             ([UIFont systemFontOfSize:size])
-#define AppBlodFontWithSize(size)               ([UIFont boldSystemFontOfSize:size])
+#define AppScreenWidth                        [[UIScreen mainScreen] bounds].size.width
+#define AppScreenHeight                       [[UIScreen mainScreen] bounds].size.height
+//#define AppDisplayScreenHeight                  ([[UIScreen mainScreen] bounds].size.height -64)
+#define AppColor(color)                       ([UIColor colorWithHexString:color])
+#define AppLoadImage(imageName)               ([UIImage imageNamed:imageName])
+#define AppSystemFontWithSize(size)           ([UIFont systemFontOfSize:size])
+#define AppBlodFontWithSize(size)             ([UIFont boldSystemFontOfSize:size])
 
 #pragma mark ----------------BLOCK相关---------------------------
 //block 声明

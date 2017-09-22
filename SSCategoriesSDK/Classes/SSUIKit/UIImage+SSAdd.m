@@ -11,18 +11,15 @@
 
 @implementation UIImage (SSAdd)
 
-- (UIImage *) imageWithTintColor:(UIColor *)tintColor
-{
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor {
     return [self imageWithTintColor:tintColor blendMode:kCGBlendModeDestinationIn];
 }
 
-- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor
-{
+- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor {
     return [self imageWithTintColor:tintColor blendMode:kCGBlendModeOverlay];
 }
 
-- (UIImage *) imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode
-{
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode {
     //We want to keep alpha, set opaque to NO; Use 0.0f for scale to use the scale factor of the device’s main screen.
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
     [tintColor setFill];
@@ -44,8 +41,7 @@
 
 
 //截取部分图像
--(UIImage*)getSubImage:(CGRect)rect
-{
+- (UIImage*)getSubImage:(CGRect)rect {
     CGImageRef subImageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
     CGRect smallBounds = CGRectMake(0, 0, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
     
@@ -59,8 +55,7 @@
 }
 
 //等比例缩放
--(UIImage*)scaleToSize:(CGSize)size
-{
+- (UIImage*)scaleToSize:(CGSize)size {
     CGFloat width = CGImageGetWidth(self.CGImage);
     CGFloat height = CGImageGetHeight(self.CGImage);
     
@@ -68,12 +63,9 @@
     float horizontalRadio = size.width*1.0/width;
     
     float radio = 1;
-    if(verticalRadio>1 && horizontalRadio>1)
-    {
+    if(verticalRadio>1 && horizontalRadio>1) {
         radio = verticalRadio > horizontalRadio ? horizontalRadio : verticalRadio;
-    }
-    else
-    {
+    } else {
         radio = verticalRadio < horizontalRadio ? verticalRadio : horizontalRadio;
     }
     
@@ -100,31 +92,25 @@
     return scaledImage;
 }
 
-+ (UIImage*)createImageWithFillColor:(UIColor*)fillColor andWithStrokeColor:(UIColor*)strokeColor withWeigt:(float)weight andWithHeight:(float)height andWithStrokeWeight:(float)strokeWeight
-{
++ (UIImage *)createImageWithFillColor:(UIColor *)fillColor andWithStrokeColor:(UIColor *)strokeColor withWeigt:(float)weight andWithHeight:(float)height andWithStrokeWeight:(float)strokeWeight {
     CGRect rect = CGRectMake(0.0f, 0.0f, weight, height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    if (fillColor)
-    {
+    if (fillColor) {
         CGContextSetFillColorWithColor(context, [fillColor CGColor]);
     }
-    if (strokeColor)
-    {
+    if (strokeColor) {
         CGContextSetStrokeColorWithColor(context, [strokeColor CGColor]);
     }
-    
     CGContextSetLineWidth(context, strokeWeight);
     CGContextMoveToPoint(context, 0,height);
     CGContextAddLineToPoint(context, rect.size.width,height);
     CGContextAddLineToPoint(context, rect.size.width/2.0,0);
     CGContextClosePath(context);
-    if (fillColor)
-    {
+    if (fillColor) {
         CGContextFillPath(context);
     }
-    if (strokeColor)
-    {
+    if (strokeColor) {
         CGContextStrokePath(context);
         //        CGContextDrawPath(context, kCGPathFillStroke);
     }
@@ -196,7 +182,7 @@
 }
 
 //把UIColor对象转化成UIImage对象
-+ (UIImage*)createImageWithColor:(UIColor*)color {
++ (UIImage *)createImageWithColor:(UIColor*)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -204,7 +190,6 @@
     CGContextFillRect(context, rect);
     UIImage* theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return theImage;
 }
 

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SSCategories.h"
+#import "SSDeviceInfo.h"
 
 @interface ViewController ()
 
@@ -20,12 +21,12 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     CGFloat wigth = SSGetUniversalSizeByWidth(320,375,414,768);
-    
+//    NSString *
     CGFloat font = SSGetUniversalSizeByFont(320,375,414,768);
     CGFloat UniversalWidth = SSGetDynamicUniversalWidth(320);
     CGFloat UniversalFont = SSGetDynamicUniversalFont(320);
     CGFloat Height = SSGetUniversalSizeByHeight(320,375,414,414,812,768);
-    
+    NSString *deviceModel =  SSDeviceInfo.deviceModel;
 }
 
 

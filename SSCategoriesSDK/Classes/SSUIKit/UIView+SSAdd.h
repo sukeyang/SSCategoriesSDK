@@ -29,7 +29,7 @@
 - (BOOL)containsSubView:(UIView *)subView;
 - (BOOL)containsSubViewOfClassType:(id)cs;
 
-- (UIViewController*)viewController;
+- (UIViewController *)viewController;
 - (void)removeAllSubviews;
 - (UIView *)findFirstResponder;
 
@@ -50,6 +50,6 @@
 - (void)addBorderWithColor:(UIColor *)color width:(CGFloat)width;
 
 //截屏
-+ (UIImage*)screenshotWithView:(UIView*)view;
++ (UIImage *)screenshotWithView:(UIView *)view;
 
 @end

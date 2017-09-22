@@ -12,7 +12,7 @@
 
 
 - (void)setUpExtraCellLineHidden {
-    UIView* view = [UIView new];
+    UIView *view = [UIView new];
     view.backgroundColor = [UIColor clearColor];
     [self setTableFooterView:view];
 }

@@ -99,7 +99,7 @@
 }
 
 #pragma mark ------------事件效应者-----------
-- (UIViewController*)viewController {
+- (UIViewController *)viewController {
     //找到控制器这个响应者
     UIResponder* nextRes = [self nextResponder];
     do{
@@ -141,7 +141,7 @@
     return NO;
 }
 
--(BOOL) containsSubViewOfClassType:(Class)class {
+- (BOOL)containsSubViewOfClassType:(Class)class {
     for (UIView *view in [self subviews]) {
         if ([view isMemberOfClass:class]) {
             return YES;
@@ -161,14 +161,14 @@
 }
 
 //view生成图片
-+ (UIImage*)screenshotWithView:(UIView*)view {
++ (UIImage *)screenshotWithView:(UIView *)view {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, [UIScreen mainScreen].scale);
 //    if (IOS_7) {
         [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
 //    } else {
 //        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
 //    }
-    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
 }

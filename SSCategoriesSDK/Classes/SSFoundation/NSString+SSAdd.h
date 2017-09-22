@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, CalculateType) {
 
 @interface NSString (SSAdd)
 
--(BOOL)containsString:(NSString *)astring;
+- (BOOL)containsString:(NSString *)astring;
 - (NSString *)SXstringByReplacingWihtNSRegularExpressionString:(NSString *)expressionString withString:(NSString *)newString;
 - (NSString *)URLEncoding;
 - (NSString *)URLDecoding;
@@ -59,13 +59,12 @@ NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextVal
 
 @end
 
-
 @interface NSMutableAttributedString (SSAdd)
 
 //替换字体颜色
-+(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithFontSize:(float)size andWithFrontColor:(NSString *)frontColor;
++ (NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithFontSize:(float)size andWithFrontColor:(NSString *)frontColor;
 //替换字体颜色和样式
-+(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithCsutomFont:(UIFont*)font andWithFrontColor:(NSString *)frontColor;
++ (NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithCsutomFont:(UIFont*)font andWithFrontColor:(NSString *)frontColor;
 
 + (NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andOneKeyWord:(NSString *)oneStr oneTextColor:(NSString *)oneTextColor andTwoNSString:(NSString *)twoStr andTwoColor:(NSString *)tColor andWithFontSize:(float)fontSize andWithOrigelStrColor:(NSString *)origelStrColor;
 

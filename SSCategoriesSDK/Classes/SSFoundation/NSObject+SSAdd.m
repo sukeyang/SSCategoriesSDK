@@ -12,7 +12,7 @@
 @implementation NSObject (SSAdd)
 
 //解析
--(NSString *)KXjSONString {
+- (NSString *)KXjSONString {
     //    NSJSONWritingPrettyPrinted的意思是将生成的json数据格式化输出 \n
     if ([NSJSONSerialization isValidJSONObject:self]) {
         NSError *error;

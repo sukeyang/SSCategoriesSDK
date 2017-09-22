@@ -184,8 +184,7 @@
             default:
                 break;
         }
-    }
-    else {
+    } else {
         self.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
         self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     }

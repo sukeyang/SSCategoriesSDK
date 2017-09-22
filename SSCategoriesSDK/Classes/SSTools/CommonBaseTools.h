@@ -17,11 +17,12 @@
 //麦克风
 + (BOOL)canRecord;
 
-+ (BOOL)isValidateIDCardNumber:(NSString*)value;
++ (BOOL)isValidateIDCardNumber:(NSString *)value;
 
-+ (BOOL)isValidateFixPhone:(NSString*)value;
++ (BOOL)isValidateFixPhone:(NSString *)value;
 
-+ (BOOL)isValidateTelphone:(NSString*)value;
++ (BOOL)isValidateTelphone:(NSString *)value;
 
-+ (NSString*)isNULLString3:(NSString*)aString;
++ (NSString *)isNULLString3:(NSString *)aString;
+
 @end

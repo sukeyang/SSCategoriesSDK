@@ -11,8 +11,8 @@
 #import "CommonMacro.h"
 
 @implementation UILabel (SSAdd)
-+ (UILabel*)createLabel:(CGRect)rect TextColor:(NSString*)color Font:(UIFont*)font textAlignment:(NSTextAlignment)alignment labTitle:(NSString*)title {
-    UILabel* lab = [[UILabel alloc] initWithFrame:rect];
++ (UILabel *)createLabel:(CGRect)rect TextColor:(NSString *)color Font:(UIFont *)font textAlignment:(NSTextAlignment)alignment labTitle:(NSString*)title {
+    UILabel *lab = [[UILabel alloc] initWithFrame:rect];
     lab.textColor = [UIColor colorWithHexString:color];
     lab.font = font;
     lab.textAlignment = alignment;
@@ -22,13 +22,13 @@
     return lab;
 }
 
-+ (UILabel*)createLineLabelInViewHeight:(float)lineHeight {
-    UILabel* labelLine = [[UILabel alloc] initWithFrame:CGRectMake(0, lineHeight - 0.5, AppScreenWidth, 0.5)];
++ (UILabel *)createLineLabelInViewHeight:(float)lineHeight {
+    UILabel *labelLine = [[UILabel alloc] initWithFrame:CGRectMake(0, lineHeight - 0.5, AppScreenWidth, 0.5)];
     return labelLine;
 }
 
-+ (UILabel*)createLabel {
-    UILabel* lab = [[UILabel alloc] init];
++ (UILabel *)createLabel {
+    UILabel *lab = [[UILabel alloc] init];
     lab.backgroundColor = [UIColor clearColor];
     lab.textAlignment = NSTextAlignmentLeft;
     lab.text = @"";

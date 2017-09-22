@@ -10,9 +10,7 @@
 
 @implementation NSDictionary (SSAdd)
 
-
 @end
-
 
 @implementation NSMutableDictionary (SSAdd)
 

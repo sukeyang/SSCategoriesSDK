@@ -45,7 +45,6 @@
     return returnArray;
 }
 
-
 + (NSArray *)obtainArrayWithoutDuplicates:(NSArray *)origelArray {
     NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:origelArray];
     NSArray *arrayWithoutDuplicates = [orderedSet array];
@@ -53,7 +52,6 @@
 }
 
 @end
-
 
 @implementation NSMutableArray (SSAdd)
 

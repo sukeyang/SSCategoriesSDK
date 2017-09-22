@@ -26,12 +26,13 @@ typedef NS_ENUM(NSInteger, ButtonImageTitleStyle ) {
     ButtonImageTitleStyleRightUp     = 11,     //图片在右上，文字在左，整体居中。
 
 };
+
 @interface UIButton (SSImageTitleStyle)
 /*
  调整按钮的文本和image的布局，前提是title和image同时存在才会调整。
  padding是调整布局时整个按钮和图文的间隔。
  
  */
--(void)setButtonImageTitleStyle:(ButtonImageTitleStyle)style padding:(CGFloat)padding;
+- (void)setButtonImageTitleStyle:(ButtonImageTitleStyle)style padding:(CGFloat)padding;
 
 @end

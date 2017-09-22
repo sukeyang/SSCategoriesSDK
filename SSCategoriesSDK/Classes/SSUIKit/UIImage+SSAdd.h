@@ -13,8 +13,8 @@
 - (UIImage *) imageWithTintColor:(UIColor *)tintColor;
 - (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
 
-- (UIImage*)getSubImage:(CGRect)rect;
-- (UIImage*)scaleToSize:(CGSize)size;
+- (UIImage *)getSubImage:(CGRect)rect;
+- (UIImage *)scaleToSize:(CGSize)size;
 
 ///  实心三角(颜色2选一)
 ///
@@ -25,14 +25,14 @@
 ///  @param strokeWeight 画笔宽
 ///
 ///  @return 正三角形
-+ (UIImage*)createImageWithFillColor:(UIColor*)fillColor andWithStrokeColor:(UIColor*)strokeColor withWeigt:(float)weight andWithHeight:(float)height andWithStrokeWeight:(float)strokeWeight;
++ (UIImage *)createImageWithFillColor:(UIColor *)fillColor andWithStrokeColor:(UIColor *)strokeColor withWeigt:(float)weight andWithHeight:(float)height andWithStrokeWeight:(float)strokeWeight;
 
 //压缩大小
-- (NSData *)compressImageToSpecifyM:(NSUInteger )imageSize;
+- (NSData  *)compressImageToSpecifyM:(NSUInteger )imageSize;
 //压缩分辨率
 - (NSData *)dataByCompressToSize:(CGSize)size toQuality:(CGFloat)quality;
 //把UIColor对象转化成UIImage对象
-+ (UIImage*)createImageWithColor:(UIColor*)color;
++ (UIImage *)createImageWithColor:(UIColor *)color;
 
 + (UIImage *)fetchAppiconImage;
 + (NSString *)fetchAppiconImageString;

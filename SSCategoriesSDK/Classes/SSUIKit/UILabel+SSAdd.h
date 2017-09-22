@@ -10,10 +10,10 @@
 
 @interface UILabel (SSAdd)
 
-+ (UILabel*)createLabel:(CGRect)rect TextColor:(NSString*)color Font:(UIFont*)font textAlignment:(NSTextAlignment)alignment labTitle:(NSString*)title;
++ (UILabel *)createLabel:(CGRect)rect TextColor:(NSString *)color Font:(UIFont *)font textAlignment:(NSTextAlignment)alignment labTitle:(NSString *)title;
 
-+ (UILabel*)createLabel;
++ (UILabel *)createLabel;
 //分割线
-+ (UILabel*)createLineLabelInViewHeight:(float)lineHeight;
++ (UILabel *)createLineLabelInViewHeight:(float)lineHeight;
 
 @end

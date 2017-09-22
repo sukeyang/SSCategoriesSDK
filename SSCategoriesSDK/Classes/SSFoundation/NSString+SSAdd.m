@@ -214,14 +214,14 @@ NSString *noDigitsNumberCalculateWithString(NSString *preValue,NSString *nextVal
 
 @implementation NSMutableAttributedString (SSAdd)
 
-+(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithFontSize:(float )size andWithFrontColor:(NSString *)frontColor {
++ (NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithFontSize:(float )size andWithFrontColor:(NSString *)frontColor {
     NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:str] ;
     NSRange range = [str rangeOfString:keyWord];
     [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithHexString:frontColor], NSFontAttributeName : [UIFont systemFontOfSize:size]} range:range];
     return attrituteString;
 }
 
-+(NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithCsutomFont:(UIFont*)font andWithFrontColor:(NSString *)frontColor {
++ (NSMutableAttributedString *)replaceRedColorWithNSString:(NSString *)str andUseKeyWord:(NSString *)keyWord andWithCsutomFont:(UIFont*)font andWithFrontColor:(NSString *)frontColor {
     NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:str] ;
     NSRange range = [str rangeOfString:keyWord];
     [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithHexString:frontColor], NSFontAttributeName :font} range:range];

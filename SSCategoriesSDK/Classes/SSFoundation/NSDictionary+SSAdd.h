@@ -10,9 +10,7 @@
 
 @interface NSDictionary (SSAdd)
 
-
 @end
-
 
 @interface NSMutableDictionary (SSAdd)
 

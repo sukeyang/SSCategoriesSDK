@@ -10,14 +10,6 @@
 
 @interface NSArray (SSAdd)
 
-- (id)safeObjectAtIndex:(NSUInteger)index;
-
-- (id)deepCopy;
-- (id)mutableDeepCopy;
-
-- (id)trueDeepCopy;
-- (id)trueDeepMutableCopy;
-
 /**
  *  随机数
  *
@@ -30,6 +22,12 @@
 
 //过滤重复
 + (NSArray *)obtainArrayWithoutDuplicates:(NSArray *)origelArray;
+
+- (id)safeObjectAtIndex:(NSUInteger)index;
+- (id)deepCopy;
+- (id)mutableDeepCopy;
+- (id)trueDeepCopy;
+- (id)trueDeepMutableCopy;
 
 @end
 

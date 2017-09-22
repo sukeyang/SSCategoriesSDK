@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, SXEventType) {
  *
  */
 - (void)routerEventWithName:(NSString *)eventName userInfo:(id)userInfo;
-
 - (void)routerEventWithEventType:(SXEventType )eventName userInfo:(id)userInfo;
 
 @end

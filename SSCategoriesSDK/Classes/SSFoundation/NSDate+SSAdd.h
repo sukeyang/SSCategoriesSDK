@@ -10,21 +10,20 @@
 
 @interface NSDate (SSAdd)
 
-+(NSDate *)dateStartOfDay:(NSDate *)date;
-+(NSDate *)dateStartOfWeek;
-+(NSDate *)dateEndOfWeek;
++ (NSDate *)dateStartOfDay:(NSDate *)date;
++ (NSDate *)dateStartOfWeek;
++ (NSDate *)dateEndOfWeek;
 
--(NSDate *)offsetMonth:(int)numMonths;
--(NSDate *)offsetDay:(int)numDays;
--(NSDate *)offsetHours:(int)hours;
--(int)numDaysInMonth;
--(int)firstWeekDayInMonth;
--(int)year;
--(int)month;
--(int)day;
+- (NSDate *)offsetMonth:(int)numMonths;
+- (NSDate *)offsetDay:(int)numDays;
+- (NSDate *)offsetHours:(int)hours;
+- (int)numDaysInMonth;
+- (int)firstWeekDayInMonth;
+- (int)year;
+- (int)month;
+- (int)day;
 
 @end
-
 
 @interface NSDate (PGAdd)
 //时间格式
@@ -35,11 +34,11 @@
 + (long long)fetchLonglongTime;
 
 //服务器时间转换
-+ (NSString*)fetchServerTime:(long long)timeLine type:(int)type;
-+ (NSString*)fetchServerTimeForStr:(NSString*)dateString type:(int)type;
++ (NSString *)fetchServerTime:(long long)timeLine type:(int)type;
++ (NSString *)fetchServerTimeForStr:(NSString *)dateString type:(int)type;
 //字符串格式
-+ (NSString*)formatCreatetTime:(NSDate*)time;
-+ (NSString*)formatCreatetTimeHaveHHMMSS:(NSDate*)time;
++ (NSString *)formatCreatetTime:(NSDate *)time;
++ (NSString *)formatCreatetTimeHaveHHMMSS:(NSDate *)time;
 
 @end
 

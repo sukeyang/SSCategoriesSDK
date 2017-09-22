@@ -15,8 +15,10 @@
 @end
 
 @implementation UIControl (PGAdd)
+
 static const char *UIControl_acceptEventInterval = "UIControl_acceptEventInterval";
 static const char *UIControl_acceptEventTime = "UIControl_acceptEventTime";
+
 - (NSTimeInterval )wds_acceptEventInterval{
     return [objc_getAssociatedObject(self, UIControl_acceptEventInterval) doubleValue];
 }
@@ -58,7 +60,6 @@ static const char *UIControl_acceptEventTime = "UIControl_acceptEventTime";
     if (NSDate.date.timeIntervalSince1970 - self.wds_acceptEventTime < self.wds_acceptEventInterval) {
         return;
     }
-    
     if (self.wds_acceptEventInterval > 0) {
         self.wds_acceptEventTime = NSDate.date.timeIntervalSince1970;
     }
