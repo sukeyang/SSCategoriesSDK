@@ -8,30 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-//[MKStyleUtil standardLabelStyle:baseInfo withCode:MKFontStyleCode_067]
-
-
-#define SSGetUniversalSizeByWidth(for320, for375, for414, for768)   [SSUIAdapter SSUniversalSizeByWidthf320:for320 f375:for375 f414:for414 f768:for768]
-#define SSGetUniversalSizeByFont(for320, for375, for414, for768)   [SSUIAdapter SSUniversalSizeByFontf320:for320 f375:for375 f414:for414 f768:for768]
+#define SSGetUniversalSizeByWidth(for320, for375, for414,for768)   [SSUIAdapter SSUniversalSizeByWidthf320:for320 f375:for375 f414:for414 f768:for768]
+#define SSGetUniversalSizeByFont(for320, for375, for414,for768)   [SSUIAdapter SSUniversalSizeByFontf320:for320 f375:for375 f414:for414 f768:for768]
 #define SSGetDynamicUniversalWidth(fontSize) [SSUIAdapter SSUniversalWidth:fontSize]
 #define SSGetDynamicUniversalFont(with) [SSUIAdapter SSUniversalFont:with]
 #define SSsystemFontOfSize(fontSize) [UIFont systemFontOfSize:fontSize]
 
-#define SSGetUniversalSizeByHeight(for4, for5, for6, for6p,forPad)   [SSUIAdapter SSUniversalSizeByHeightf4:for4 f5:for5 f6:for6 f6p:for6p fPad:forPad]
-
+#define SSGetUniversalSizeByHeight(for4, for5, for6, for6p,forX, forPad)   [SSUIAdapter SSUniversalSizeByHeightf4:for4 f5:for5 f6:for6 f6p:for6p fX:forX fPad:forPad]
 
 
 @interface SSUIAdapter : NSObject
-
 //宽度
-+(float)SSUniversalSizeByWidthf320:(float)for320 f375:(float)for375 f414:(float)for414 f768:(float)for768;
++ (CGFloat)SSUniversalSizeByWidthf320:(CGFloat)for320 f375:(CGFloat)for375 f414:(CGFloat)for414 f768:(CGFloat)for768;
 //高度
-+(float)SSUniversalSizeByHeightf4:(float)for4 f5:(float)for5 f6:(float)for6 f6p:(float)for6p fPad:(float)forPad;
++(CGFloat)SSUniversalSizeByHeightf4:(CGFloat)for4 f5:(CGFloat)for5 f6:(CGFloat)for6 f6p:(CGFloat)for6p fX:(CGFloat)forX fPad:(CGFloat)forPad  ;
 //字体
-+(float)SSUniversalSizeByFontf320:(float)for320 f375:(float)for375 f414:(float)for414 f768:(float)for768;
++(CGFloat)SSUniversalSizeByFontf320:(CGFloat)for320 f375:(CGFloat)for375 f414:(CGFloat)for414 f768:(CGFloat)for768;
 //比例
-+(float)SSUniversalWidth:(float)with;
++(CGFloat)SSUniversalWidth:(CGFloat)with;
 
-+(float)SSUniversalFont:(float)fontSize;
++(CGFloat)SSUniversalFont:(CGFloat)fontSize;
 
 @end
