@@ -49,9 +49,9 @@
 #define AppUserDefaults                       [NSUserDefaults standardUserDefaults]
 #define AppStringIsNULL(string)               [CommonBaseTools isNULLString3:string]
 
-#define iOS7Later ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)
-#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
-#define iOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
+#define iOS7_Later ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)
+#define iOS8_Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
+#define iOS9_Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
 
 #pragma mark ----------------UI相关---------------------------
 #define AlertViewShow(msg) [[[UIAlertView alloc]initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];

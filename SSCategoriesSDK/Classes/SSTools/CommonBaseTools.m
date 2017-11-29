@@ -35,7 +35,7 @@
 
 + (BOOL)canRecord {
     __block BOOL bCanRecord = YES;
-    if (iOS7Later) {
+    if (iOS7_Later) {
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
         if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
             [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
