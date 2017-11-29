@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <UIKit/UIKit.h>
+#import "CommonMacro.h"
 
 @implementation CommonBaseTools
 
@@ -34,7 +35,7 @@
 
 + (BOOL)canRecord {
     __block BOOL bCanRecord = YES;
-    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending) {
+    if (iOS7Later) {
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
         if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
             [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {

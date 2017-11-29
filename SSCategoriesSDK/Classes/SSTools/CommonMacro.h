@@ -43,12 +43,15 @@
 
 #pragma mark ----------------快捷方法相关---------------------------
 #define AppStrWithStr(x,y)                    [NSString stringWithFormat:@"%@%@",x,y]
-#define AppSystemVersion                      [[[UIDevice currentDevice] systemVersion] intValue]
+#define AppSystemVersion                      ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define AppNotificationCenter                 ([NSNotificationCenter defaultCenter])
 #define AppFileManager                        [NSFileManager defaultManager]
 #define AppUserDefaults                       [NSUserDefaults standardUserDefaults]
 #define AppStringIsNULL(string)               [CommonBaseTools isNULLString3:string]
 
+#define iOS7Later ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)
+#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
+#define iOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
 
 #pragma mark ----------------UI相关---------------------------
 #define AlertViewShow(msg) [[[UIAlertView alloc]initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
@@ -61,6 +64,8 @@
 #define AppLoadImage(imageName)               ([UIImage imageNamed:imageName])
 #define AppSystemFontWithSize(size)           ([UIFont systemFontOfSize:size])
 #define AppBlodFontWithSize(size)             ([UIFont boldSystemFontOfSize:size])
+//字体高度
+#define AppFontHeight(x)  ([[UIFont systemFontOfSize:x] lineHeight] + 0.2)
 
 #pragma mark ----------------BLOCK相关---------------------------
 //block 声明
@@ -68,6 +73,8 @@
 typedef void (^AppBasicBlock)(id content);
 typedef void (^AppOperationCallBackBlock)(BOOL isSuccess, NSString *errorMsg);
 typedef void (^AppContentCallBackBlock)(NSInteger flag, id content);
+typedef NSString* (^AppReturnCallBackBlock)(NSInteger flag, id content);
+
 #endif
 
 /**
