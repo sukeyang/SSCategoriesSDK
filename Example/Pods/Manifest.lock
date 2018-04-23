@@ -13,8 +13,7 @@ PODS:
     - SSCategoriesSDK/SSFoundation (= 0.4.4)
     - SSCategoriesSDK/SSTools (= 0.4.4)
     - SSCategoriesSDK/SSUIKit (= 0.4.4)
-  - SSCategoriesSDK/SSFoundation (0.4.4):
-    - SSCategoriesSDK/SSTools
+  - SSCategoriesSDK/SSFoundation (0.4.4)
   - SSCategoriesSDK/SSTools (0.4.4)
   - SSCategoriesSDK/SSUIKit (0.4.4):
     - SSCategoriesSDK/SSTools
@@ -42,7 +41,7 @@ SPEC CHECKSUMS:
   "Expecta+Snapshots": 29b38dd695bc72a0ed2bea833937d78df41943ba
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
-  SSCategoriesSDK: f25df96b4a1ceef6dfa0d15d50139f2b396984ed
+  SSCategoriesSDK: 15d9338640854e8ec11c7185b27b1fbf6b3eb7b7
 
 PODFILE CHECKSUM: d3c345144047c4e4540ce01b936c5ee81a76790c
 

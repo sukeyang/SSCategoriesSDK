@@ -47,12 +47,7 @@
     {
       "name": "SSFoundation",
       "source_files": "SSCategoriesSDK/Classes/SSFoundation/*.{h,m}",
-      "public_header_files": "SSCategoriesSDK/Classes/SSFoundation/*.h",
-      "dependencies": {
-        "SSCategoriesSDK/SSTools": [
-
-        ]
-      }
+      "public_header_files": "SSCategoriesSDK/Classes/SSFoundation/*.h"
     }
   ]
 }
