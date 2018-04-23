@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SSCategories.h"
 #import "NSArray+SSAdd.h"
 #import "NSDate+SSAdd.h"
 #import "NSDictionary+SSAdd.h"
@@ -18,9 +19,8 @@
 #import "NSObject+SSAddForKVO.h"
 #import "NSString+SSAdd.h"
 #import "CommonBaseTools.h"
-#import "CommonMacro.h"
-#import "SSCategories.h"
 #import "SSDeviceInfo.h"
+#import "CommonMacro.h"
 #import "SSUIAdapter.h"
 #import "UIAlertView+SSBlocks.h"
 #import "UIButton+SSAdd.h"

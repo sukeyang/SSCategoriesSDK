@@ -19,6 +19,8 @@
     "ios": "7.0"
   },
   "requires_arc": true,
+  "public_header_files": "SSCategoriesSDK/Classes/SSCategories.h",
+  "source_files": "SSCategoriesSDK/Classes/SSCategories.h",
   "frameworks": [
     "UIKit",
     "QuartzCore",
@@ -48,6 +50,9 @@
       "public_header_files": "SSCategoriesSDK/Classes/SSFoundation/*.h",
       "dependencies": {
         "SSCategoriesSDK/SSUIKit": [
+
+        ],
+        "SSCategoriesSDK/SSTools": [
 
         ]
       }

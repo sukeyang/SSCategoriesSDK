@@ -31,6 +31,9 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '7.0'
   s.requires_arc = true
 
+  s.public_header_files = 'SSCategoriesSDK/Classes/SSCategories.h'
+  s.source_files = 'SSCategoriesSDK/Classes/SSCategories.h'
+
   s.subspec 'SSUIKit' do |sp|
       sp.source_files = 'SSCategoriesSDK/Classes/SSUIKit/*.{h,m}'
       sp.public_header_files = 'SSCategoriesSDK/Classes/SSUIKit/*.h'
@@ -46,6 +49,7 @@ TODO: Add long description of the pod here.
       sp.source_files = 'SSCategoriesSDK/Classes/SSFoundation/*.{h,m}'
       sp.public_header_files = 'SSCategoriesSDK/Classes/SSFoundation/*.h'
       sp.dependency 'SSCategoriesSDK/SSUIKit'
+      sp.dependency 'SSCategoriesSDK/SSTools'
   end
 
  

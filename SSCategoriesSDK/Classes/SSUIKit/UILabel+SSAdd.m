@@ -9,7 +9,7 @@
 #import "UILabel+SSAdd.h"
 #import "UIColor+SSAdd.h"
 #import <objc/runtime.h>
-#import "NSString+SSAdd.h"
+//#import "NSString+SSAdd.h"
 
 @implementation UILabel (SSAdd)
 
