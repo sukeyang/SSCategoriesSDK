@@ -30,16 +30,16 @@
   ],
   "subspecs": [
     {
-      "name": "SSUIKit",
-      "source_files": "SSCategoriesSDK/Classes/SSUIKit/*.{h,m}",
-      "public_header_files": "SSCategoriesSDK/Classes/SSUIKit/*.h"
-    },
-    {
       "name": "SSTools",
       "source_files": "SSCategoriesSDK/Classes/SSTools/*.{h,m}",
-      "public_header_files": "SSCategoriesSDK/Classes/SSTools/*.h",
+      "public_header_files": "SSCategoriesSDK/Classes/SSTools/*.h"
+    },
+    {
+      "name": "SSUIKit",
+      "source_files": "SSCategoriesSDK/Classes/SSUIKit/*.{h,m}",
+      "public_header_files": "SSCategoriesSDK/Classes/SSUIKit/*.h",
       "dependencies": {
-        "SSCategoriesSDK/SSUIKit": [
+        "SSCategoriesSDK/SSTools": [
 
         ]
       }
@@ -49,9 +49,6 @@
       "source_files": "SSCategoriesSDK/Classes/SSFoundation/*.{h,m}",
       "public_header_files": "SSCategoriesSDK/Classes/SSFoundation/*.h",
       "dependencies": {
-        "SSCategoriesSDK/SSUIKit": [
-
-        ],
         "SSCategoriesSDK/SSTools": [
 
         ]
