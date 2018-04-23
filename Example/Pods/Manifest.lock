@@ -9,16 +9,16 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.0.7):
     - FBSnapshotTestCase/Core
   - Specta (1.0.7)
-  - SSCategoriesSDK (0.4.3):
-    - SSCategoriesSDK/SSFoundation (= 0.4.3)
-    - SSCategoriesSDK/SSTools (= 0.4.3)
-    - SSCategoriesSDK/SSUIKit (= 0.4.3)
-  - SSCategoriesSDK/SSFoundation (0.4.3):
+  - SSCategoriesSDK (0.4.4):
+    - SSCategoriesSDK/SSFoundation (= 0.4.4)
+    - SSCategoriesSDK/SSTools (= 0.4.4)
+    - SSCategoriesSDK/SSUIKit (= 0.4.4)
+  - SSCategoriesSDK/SSFoundation (0.4.4):
     - SSCategoriesSDK/SSTools
     - SSCategoriesSDK/SSUIKit
-  - SSCategoriesSDK/SSTools (0.4.3):
+  - SSCategoriesSDK/SSTools (0.4.4):
     - SSCategoriesSDK/SSUIKit
-  - SSCategoriesSDK/SSUIKit (0.4.3)
+  - SSCategoriesSDK/SSUIKit (0.4.4)
 
 DEPENDENCIES:
   - Expecta
@@ -43,7 +43,7 @@ SPEC CHECKSUMS:
   "Expecta+Snapshots": 29b38dd695bc72a0ed2bea833937d78df41943ba
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
-  SSCategoriesSDK: e8c53049ec6259cb02cf22fbeae74308cd884ea4
+  SSCategoriesSDK: 9c10e8a6441dcfcbdf1c0aeffc7c82389d291a77
 
 PODFILE CHECKSUM: d3c345144047c4e4540ce01b936c5ee81a76790c
 
