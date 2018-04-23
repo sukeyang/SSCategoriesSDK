@@ -8,7 +8,6 @@
 
 #import "UILabel+SSAdd.h"
 #import "UIColor+SSAdd.h"
-#import "CommonMacro.h"
 #import <objc/runtime.h>
 #import "NSString+SSAdd.h"
 
@@ -46,7 +45,7 @@
 }
 
 + (UILabel *)createLineLabelInViewHeight:(float)lineHeight {
-    UILabel *labelLine = [[UILabel alloc] initWithFrame:CGRectMake(0, lineHeight - 0.5, AppScreenWidth, 0.5)];
+    UILabel *labelLine = [[UILabel alloc] initWithFrame:CGRectMake(0, lineHeight - 0.5, ([[UIScreen mainScreen] bounds].size.width), 0.5)];
     return labelLine;
 }
 

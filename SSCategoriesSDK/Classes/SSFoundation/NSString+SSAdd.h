@@ -27,8 +27,6 @@ typedef NS_ENUM(NSInteger, CalculateType) {
 
 - (NSString *)MD5Hex;
 
-+ (NSString *)PGStringDate;
-
 //计算高度
 - (CGFloat)heightForFont:(UIFont *)font width:(CGFloat)width;
 //计算宽度

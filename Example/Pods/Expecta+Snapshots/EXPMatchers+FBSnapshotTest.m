@@ -1,3 +1,11 @@
+//
+//  EXPMatchers+FBSnapshotTest.h
+//  Artsy
+//
+//  Created by Daniel Doubrovkine on 1/14/14.
+//  Copyright (c) 2014 Artsy Inc. All rights reserved.
+//
+
 #import "EXPMatchers+FBSnapshotTest.h"
 #import <Expecta/EXPMatcherHelpers.h>
 #import <FBSnapshotTestCase/FBSnapshotTestController.h>
@@ -18,15 +26,14 @@
     return instance;
 }
 
-+ (BOOL)compareSnapshotOfViewOrLayer:(id)viewOrLayer snapshot:(NSString *)snapshot testCase:(id)testCase record:(BOOL)record referenceDirectory:(NSString *)referenceDirectory tolerance:(CGFloat)tolerance error:(NSError **)error
++ (BOOL)compareSnapshotOfViewOrLayer:(id)viewOrLayer snapshot:(NSString *)snapshot testCase:(id)testCase record:(BOOL)record referenceDirectory:(NSString *)referenceDirectory error:(NSError **)error
 
 {
     FBSnapshotTestController *snapshotController = [[FBSnapshotTestController alloc] initWithTestClass:[testCase class]];
     snapshotController.recordMode = record;
     snapshotController.referenceImagesDirectory = referenceDirectory;
     snapshotController.usesDrawViewHierarchyInRect = [Expecta usesDrawViewHierarchyInRect];
-    snapshotController.deviceAgnostic = [Expecta isDeviceAgnostic];
-  
+
     if (! snapshotController.referenceImagesDirectory) {
         [NSException raise:@"Missing value for referenceImagesDirectory" format:@"Call [[EXPExpectFBSnapshotTest instance] setReferenceImagesDirectory"];
     }
@@ -34,7 +41,7 @@
     return [snapshotController compareSnapshotOfViewOrLayer:viewOrLayer
                                                    selector:NSSelectorFromString(snapshot)
                                                  identifier:nil
-                                                  tolerance:tolerance
+                                                  tolerance:0
                                                       error:error];
 }
 
@@ -80,39 +87,26 @@ void setGlobalReferenceImageDir(char *reference) {
     NSString *testFileName = [NSString stringWithCString:self.fileName encoding:NSUTF8StringEncoding];
     NSArray *pathComponents = [testFileName pathComponents];
 
-    NSString *firstFolderFound = nil;
-
-    for (NSString *folder in pathComponents.reverseObjectEnumerator) {
+    for (NSString *folder in pathComponents) {
         if ([folder.lowercaseString rangeOfString:@"tests"].location != NSNotFound) {
+
             NSArray *folderPathComponents = [pathComponents subarrayWithRange:NSMakeRange(0, [pathComponents indexOfObject:folder] + 1)];
-            NSString *referenceImagesPath = [NSString stringWithFormat:@"%@/ReferenceImages", [folderPathComponents componentsJoinedByString:@"/"]];
+            return [NSString stringWithFormat:@"%@/ReferenceImages", [folderPathComponents componentsJoinedByString:@"/"]];
 
-            if (!firstFolderFound) {
-                firstFolderFound = referenceImagesPath;
-            }
-
-            BOOL isDirectory = NO;
-            BOOL referenceDirExists = [[NSFileManager defaultManager] fileExistsAtPath:referenceImagesPath isDirectory:&isDirectory];
-
-            // if the folder exists, this is the reference dir for sure
-            if (referenceDirExists && isDirectory) {
-                return referenceImagesPath;
-            }
         }
-    }
-
-    // if a reference folder wasn't found, we should create one
-    if (firstFolderFound) {
-        return firstFolderFound;
     }
 
     [NSException raise:@"Could not infer reference image folder" format:@"You should provide a reference dir using setGlobalReferenceImageDir(FB_REFERENCE_IMAGE_DIR);"];
     return nil;
 }
-
 @end
 
 
+
+// If you're bringing in Speca via CocoaPods
+// use the test path to get the test's image file URL
+
+#if __has_include(<Specta/Specta.h>)
 #import <Specta/Specta.h>
 #import <Specta/SpectaUtility.h>
 #import <Specta/SPTExample.h>
@@ -133,13 +127,8 @@ NSString *sanitizedTestPath(){
     return name;
 }
 
-EXPMatcherImplementationBegin(haveValidSnapshotWithTolerance, (CGFloat tolerance)){
+EXPMatcherImplementationBegin(haveValidSnapshot, (void)){
     __block NSError *error = nil;
-
-    prerequisite(^BOOL{
-        return actual != nil;
-    });
-
 
     match(^BOOL{
         NSString *referenceImageDir = [self _getDefaultReferenceDirectory];
@@ -151,14 +140,10 @@ EXPMatcherImplementationBegin(haveValidSnapshotWithTolerance, (CGFloat tolerance
             actual = [actual view];
         }
 
-        return [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:name testCase:[self testCase] record:NO referenceDirectory:referenceImageDir tolerance:tolerance error:&error];
+        return [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:name testCase:[self testCase] record:NO referenceDirectory:referenceImageDir error:&error];
     });
 
     failureMessageForTo(^NSString *{
-        if (!actual) {
-            return [EXPExpectFBSnapshotTest combinedError:@"Nil was passed into haveValidSnapshot." test:sanitizedTestPath() error:nil];
-        }
-
         return [EXPExpectFBSnapshotTest combinedError:@"expected a matching snapshot in" test:sanitizedTestPath() error:error];
     });
 
@@ -168,22 +153,18 @@ EXPMatcherImplementationBegin(haveValidSnapshotWithTolerance, (CGFloat tolerance
 }
 EXPMatcherImplementationEnd
 
-EXPMatcherImplementationBegin(haveValidSnapshot, (void)) {
-    return self.haveValidSnapshotWithTolerance(0);
-}
-EXPMatcherImplementationEnd
-
 EXPMatcherImplementationBegin(recordSnapshot, (void)) {
     __block NSError *error = nil;
 
     BOOL actualIsViewLayerOrViewController = ([actual isKindOfClass:UIView.class] || [actual isKindOfClass:CALayer.class] || [actual isKindOfClass:UIViewController.class]);
 
     prerequisite(^BOOL{
-        return actual != nil && actualIsViewLayerOrViewController;
+        return actualIsViewLayerOrViewController;
     });
 
     match(^BOOL{
         NSString *referenceImageDir = [self _getDefaultReferenceDirectory];
+
         // For view controllers do the viewWill/viewDid dance, then pass view through
         if ([actual isKindOfClass:UIViewController.class]) {
 
@@ -192,15 +173,11 @@ EXPMatcherImplementationBegin(recordSnapshot, (void)) {
             actual = [actual view];
         }
 
-        [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:sanitizedTestPath() testCase:[self testCase] record:YES referenceDirectory:referenceImageDir tolerance:0 error:&error];
+        [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:sanitizedTestPath() testCase:[self testCase] record:YES referenceDirectory:referenceImageDir error:&error];
         return NO;
     });
 
     failureMessageForTo(^NSString *{
-        if (!actual) {
-            return [EXPExpectFBSnapshotTest combinedError:@"Nil was passed into recordSnapshot." test:sanitizedTestPath() error:nil];
-        }
-
         if (!actualIsViewLayerOrViewController) {
             return [EXPExpectFBSnapshotTest combinedError:@"Expected a View, Layer or View Controller." test:sanitizedTestPath() error:nil];
         }
@@ -221,12 +198,54 @@ EXPMatcherImplementationBegin(recordSnapshot, (void)) {
 }
 EXPMatcherImplementationEnd
 
-EXPMatcherImplementationBegin(haveValidSnapshotNamedWithTolerance, (NSString *snapshot, CGFloat tolerance)) {
+#else
+
+// If you don't have Speca stub the functions
+
+EXPMatcherImplementationBegin(haveValidSnapshot, (void)){
+
+    prerequisite(^BOOL{
+        return NO;
+    });
+
+    failureMessageForTo(^NSString *{
+        return @"you need Specta installed via CocoaPods to use haveValidSnapshot, use haveValidSnapshotNamed instead";
+    });
+
+    failureMessageForNotTo(^NSString *{
+        return @"you need Specta installed via CocoaPods to use haveValidSnapshot, use haveValidSnapshotNamed instead";
+    });
+}
+EXPMatcherImplementationEnd
+
+
+EXPMatcherImplementationBegin(recordSnapshot, (void)) {
+    
+    prerequisite(^BOOL{
+        return NO;
+    });
+
+    failureMessageForTo(^NSString *{
+        return @"you need Specta installed via CocoaPods to use recordSnapshot, use recordSnapshotNamed instead";
+    });
+
+    failureMessageForNotTo(^NSString *{
+        return @"you need Specta installed via CocoaPods to use recordSnapshot, use recordSnapshotNamed instead";
+    });
+}
+EXPMatcherImplementationEnd
+
+
+#endif
+
+
+
+EXPMatcherImplementationBegin(haveValidSnapshotNamed, (NSString *snapshot)){
     BOOL snapshotIsNil = (snapshot == nil);
     __block NSError *error = nil;
 
     prerequisite(^BOOL{
-        return actual != nil && !(snapshotIsNil);
+        return !(snapshotIsNil);
     });
 
     match(^BOOL{
@@ -237,14 +256,10 @@ EXPMatcherImplementationBegin(haveValidSnapshotNamedWithTolerance, (NSString *sn
 
             actual = [actual view];
         }
-        return [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:snapshot testCase:[self testCase] record:NO referenceDirectory:referenceImageDir tolerance:tolerance error:&error];
+        return [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:snapshot testCase:[self testCase] record:NO referenceDirectory:referenceImageDir error:&error];
     });
 
     failureMessageForTo(^NSString *{
-        if (!actual) {
-            return [EXPExpectFBSnapshotTest combinedError:@"Nil was passed into haveValidSnapshotNamed." test:sanitizedTestPath() error:nil];
-        }
-
         return [EXPExpectFBSnapshotTest combinedError:@"expected a matching snapshot named" test:snapshot error:error];
 
     });
@@ -255,11 +270,6 @@ EXPMatcherImplementationBegin(haveValidSnapshotNamedWithTolerance, (NSString *sn
 }
 EXPMatcherImplementationEnd
 
-EXPMatcherImplementationBegin(haveValidSnapshotNamed, (NSString *snapshot)) {
-    return self.haveValidSnapshotNamedWithTolerance(snapshot, 0);
-}
-EXPMatcherImplementationEnd
-
 EXPMatcherImplementationBegin(recordSnapshotNamed, (NSString *snapshot)) {
     BOOL snapshotExists = (snapshot != nil);
     BOOL actualIsViewLayerOrViewController = ([actual isKindOfClass:UIView.class] || [actual isKindOfClass:CALayer.class] || [actual isKindOfClass:UIViewController.class]);
@@ -267,11 +277,12 @@ EXPMatcherImplementationBegin(recordSnapshotNamed, (NSString *snapshot)) {
     id actualRef = actual;
 
     prerequisite(^BOOL{
-        return actualRef != nil && snapshotExists && actualIsViewLayerOrViewController;
+        return actualRef && snapshotExists && actualIsViewLayerOrViewController;
     });
 
     match(^BOOL{
         NSString *referenceImageDir = [self _getDefaultReferenceDirectory];
+
         // For view controllers do the viewWill/viewDid dance, then pass view through
         if ([actual isKindOfClass:UIViewController.class]) {
             [actual beginAppearanceTransition:YES animated:NO];
@@ -279,14 +290,11 @@ EXPMatcherImplementationBegin(recordSnapshotNamed, (NSString *snapshot)) {
             actual = [actual view];
         }
 
-        [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:snapshot testCase:[self testCase] record:YES referenceDirectory:referenceImageDir tolerance:0 error:&error];
+        [EXPExpectFBSnapshotTest compareSnapshotOfViewOrLayer:actual snapshot:snapshot testCase:[self testCase] record:YES referenceDirectory:referenceImageDir error:&error];
         return NO;
     });
 
     failureMessageForTo(^NSString *{
-        if (!actual) {
-            return [EXPExpectFBSnapshotTest combinedError:@"Nil was passed into recordSnapshotNamed." test:sanitizedTestPath() error:nil];
-        }
         if (!actualIsViewLayerOrViewController) {
             return [EXPExpectFBSnapshotTest combinedError:@"Expected a View, Layer or View Controller." test:snapshot error:nil];
         }

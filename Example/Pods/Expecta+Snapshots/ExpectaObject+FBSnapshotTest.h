@@ -14,8 +14,4 @@
 
 + (BOOL)usesDrawViewHierarchyInRect;
 
-+ (void)setDeviceAgnostic:(BOOL)deviceAgnostic;
-
-+ (BOOL)isDeviceAgnostic;
-
 @end

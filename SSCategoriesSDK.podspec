@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SSCategoriesSDK'
-  s.version          = '0.4.1'
+  s.version          = '0.4.3'
   s.summary          = 'SSCategoriesSDK Tools.'
 
 # This description is used to generate tags and improve search results.
@@ -31,13 +31,15 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '7.0'
   s.requires_arc = true
 
-   s.subspec 'SSUIKit' do |sp|
+  s.subspec 'SSUIKit' do |sp|
       sp.source_files = 'SSCategoriesSDK/Classes/SSUIKit/*.{h,m}'
       sp.public_header_files = 'SSCategoriesSDK/Classes/SSUIKit/*.h'
   end
-     s.subspec 'SSTools' do |sp|
+
+  s.subspec 'SSTools' do |sp|
       sp.source_files = 'SSCategoriesSDK/Classes/SSTools/*.{h,m}'
       sp.public_header_files = 'SSCategoriesSDK/Classes/SSTools/*.h'
+      sp.dependency 'SSCategoriesSDK/SSUIKit'
   end
 
    s.subspec 'SSFoundation' do |sp|
@@ -47,7 +49,6 @@ TODO: Add long description of the pod here.
   end
 
  
-
   # s.source_files = 'SSCategoriesSDK/Classes/**/*.{h,m}'
   
   # s.resource_bundles = {
