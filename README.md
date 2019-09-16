@@ -17,7 +17,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 |  Minimum iOS Target | Note |
 |:-------------------:|:-----|
-| iOS 7 | Xcode 7+ is required. |
+| iOS 8 | Xcode 8+ is required. |
 | iOS 6 | n/a |
 
 ## Installation
@@ -30,11 +30,11 @@ pod "SSCategoriesSDK"
 ```
 
 ## Author
-* [Oxygen][OxygenGithub]
+* [sukeyang][sukeyang  Github]
 
 ## License
 
 SSCategoriesSDK is available under the MIT license. See the LICENSE file for more info.
 
 <!-- external links -->
-[OxygenGithub]:https://github.com/410900345
+[sukeyang  Github]:https://github.com/sukeyang

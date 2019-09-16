@@ -10,8 +10,8 @@
 
 @interface UIImage (SSAdd)
 
-- (UIImage *) imageWithTintColor:(UIColor *)tintColor;
-- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
+- (UIImage *)ssImageWithTintColor:(UIColor *)tintColor;
+- (UIImage *)ssImageWithGradientTintColor:(UIColor *)tintColor;
 
 - (UIImage *)getSubImage:(CGRect)rect;
 - (UIImage *)scaleToSize:(CGSize)size;
@@ -28,7 +28,7 @@
 + (UIImage *)createImageWithFillColor:(UIColor *)fillColor andWithStrokeColor:(UIColor *)strokeColor withWeigt:(float)weight andWithHeight:(float)height andWithStrokeWeight:(float)strokeWeight;
 
 //压缩大小
-- (NSData  *)compressImageToSpecifyM:(NSUInteger )imageSize;
+- (NSData *)compressImageToSpecifyM:(NSUInteger )imageSize;
 //压缩分辨率
 - (NSData *)dataByCompressToSize:(CGSize)size toQuality:(CGFloat)quality;
 //把UIColor对象转化成UIImage对象
