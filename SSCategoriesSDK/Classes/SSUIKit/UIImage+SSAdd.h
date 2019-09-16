@@ -10,8 +10,8 @@
 
 @interface UIImage (SSAdd)
 
-- (UIImage *) imageWithTintColor:(UIColor *)tintColor;
-- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
+- (UIImage *)ssImageWithTintColor:(UIColor *)tintColor;
+- (UIImage *)imageWithGradientTintColor:(UIColor *)tintColor;
 
 - (UIImage*)getSubImage:(CGRect)rect;
 - (UIImage*)scaleToSize:(CGSize)size;
