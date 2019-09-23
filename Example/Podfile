@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios ,'7.0'
+platform :ios ,'8.0'
 target 'SSCategoriesSDK_Example' do
   pod 'SSCategoriesSDK', :path => '../'
 
@@ -8,8 +8,8 @@ target 'SSCategoriesSDK_Example' do
     inherit! :search_paths
 
     pod 'Specta'
-  pod 'Expecta'
-  pod 'FBSnapshotTestCase'
-  pod 'Expecta+Snapshots'
+#  pod 'Expecta'
+#  pod 'FBSnapshotTestCase'
+#  pod 'Expecta+Snapshots'
   end
 end

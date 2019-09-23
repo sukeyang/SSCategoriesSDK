@@ -10,30 +10,13 @@ Pod::Spec.new do |s|
   s.name             = 'SSCategoriesSDK'
   s.version          = '0.4.5'
   s.summary          = 'SSCategoriesSDK Tools.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
   s.homepage         = 'https://github.com/sukeyang/SSCategoriesSDK.git'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Suk' => '410900345@qq.com' }
   s.source           = { :git => 'https://github.com/sukeyang/SSCategoriesSDK.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
-
-  s.public_header_files = 'SSCategoriesSDK/Classes/SSCategories.h'
-  s.source_files = 'SSCategoriesSDK/Classes/SSCategories.h'
-
+  
   s.subspec 'SSTools' do |sp|
     sp.source_files = 'SSCategoriesSDK/Classes/SSTools/*.{h,m}'
     sp.public_header_files = 'SSCategoriesSDK/Classes/SSTools/*.h'
@@ -50,13 +33,5 @@ TODO: Add long description of the pod here.
       sp.public_header_files = 'SSCategoriesSDK/Classes/SSFoundation/*.h'
   end
 
- 
-  # s.source_files = 'SSCategoriesSDK/Classes/**/*.{h,m}'
-  
-  # s.resource_bundles = {
-  #   'SSCategoriesSDK' => ['SSCategoriesSDK/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'SSCategoriesSDK/Classes/**/*.h'
   s.frameworks = 'UIKit', 'QuartzCore','CoreGraphics', 'CoreImage','Foundation'
 end

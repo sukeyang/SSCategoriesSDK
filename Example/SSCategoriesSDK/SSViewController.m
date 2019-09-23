@@ -7,8 +7,9 @@
 //
 
 #import "SSViewController.h"
-#import "SSCategories.h"
-
+#import <SSCategoriesSDK/SSUIKit.h>
+#import <SSCategoriesSDK/SSFoundation.h>
+#import <SSCategoriesSDK/SSTools.h>
 
 @interface SSViewController ()
 

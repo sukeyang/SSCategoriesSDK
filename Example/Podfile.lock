@@ -1,35 +1,20 @@
 PODS:
-  - Expecta (1.0.6)
-  - "Expecta+Snapshots (2.0.0)":
-    - Expecta (~> 1.0)
-    - FBSnapshotTestCase/Core (~> 2.0.3)
-  - FBSnapshotTestCase (2.0.7):
-    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
-  - FBSnapshotTestCase/Core (2.0.7)
-  - FBSnapshotTestCase/SwiftSupport (2.0.7):
-    - FBSnapshotTestCase/Core
   - Specta (1.0.7)
-  - SSCategoriesSDK (0.4.4):
-    - SSCategoriesSDK/SSFoundation (= 0.4.4)
-    - SSCategoriesSDK/SSTools (= 0.4.4)
-    - SSCategoriesSDK/SSUIKit (= 0.4.4)
-  - SSCategoriesSDK/SSFoundation (0.4.4)
-  - SSCategoriesSDK/SSTools (0.4.4)
-  - SSCategoriesSDK/SSUIKit (0.4.4):
+  - SSCategoriesSDK (0.4.5):
+    - SSCategoriesSDK/SSFoundation (= 0.4.5)
+    - SSCategoriesSDK/SSTools (= 0.4.5)
+    - SSCategoriesSDK/SSUIKit (= 0.4.5)
+  - SSCategoriesSDK/SSFoundation (0.4.5)
+  - SSCategoriesSDK/SSTools (0.4.5)
+  - SSCategoriesSDK/SSUIKit (0.4.5):
     - SSCategoriesSDK/SSTools
 
 DEPENDENCIES:
-  - Expecta
-  - "Expecta+Snapshots"
-  - FBSnapshotTestCase
   - Specta
   - SSCategoriesSDK (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Expecta
-    - "Expecta+Snapshots"
-    - FBSnapshotTestCase
     - Specta
 
 EXTERNAL SOURCES:
@@ -37,12 +22,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  "Expecta+Snapshots": 29b38dd695bc72a0ed2bea833937d78df41943ba
-  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
-  SSCategoriesSDK: 15d9338640854e8ec11c7185b27b1fbf6b3eb7b7
+  SSCategoriesSDK: 1a4ac47c8f5a7c9caeb1f4e185e2dbe8a1e4cb4d
 
-PODFILE CHECKSUM: d3c345144047c4e4540ce01b936c5ee81a76790c
+PODFILE CHECKSUM: b62ee49a263d8de35ea1143be9e63b858a2ebdb8
 
 COCOAPODS: 1.5.0

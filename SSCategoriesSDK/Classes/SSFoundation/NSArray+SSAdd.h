@@ -20,9 +20,13 @@
  */
 + (NSArray *)fetchRandomCount:(NSInteger)randomCount fromAllNum:(NSInteger)allNum;
 
-//过滤重复
+
+/// 过滤重复
+/// @param origelArray 重复的数组
 + (NSArray *)obtainArrayWithoutDuplicates:(NSArray *)origelArray;
 
+/// 安全index
+/// @param index 位置
 - (id)safeObjectAtIndex:(NSUInteger)index;
 - (id)deepCopy;
 - (id)mutableDeepCopy;
