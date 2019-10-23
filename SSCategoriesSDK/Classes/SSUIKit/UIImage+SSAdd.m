@@ -14,7 +14,7 @@
     return [self ssImageWithTintColor:tintColor blendMode:kCGBlendModeDestinationIn];
 }
 
-- (UIImage *)ssssImageWithGradientTintColor:(UIColor *)tintColor {
+- (UIImage *)ssImageWithGradientTintColor:(UIColor *)tintColor {
     return [self ssImageWithTintColor:tintColor blendMode:kCGBlendModeOverlay];
 }
 
